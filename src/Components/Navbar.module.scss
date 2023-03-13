@@ -1,13 +1,16 @@
 @import '../variables.scss';
 
 .navbar {
+	width: 100%;
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
 	@include gutter;
 	padding-top: 5vh;
-	padding-bottom: 2vh;
-	background-color: $color-grey;
+	padding-bottom: 5vh;
+	background: $color-grey;
+	background: linear-gradient(0deg, transparent 0%, $color-grey 25%);
+	gap: 2vw;
 
 	h3 {
 		padding-left: 2vw;

@@ -2,12 +2,20 @@ import React from 'react';
 import styles from './HomePage.module.scss';
 import picture from '../assets/PictureOfMe.png'
 import arrowdown from '../assets/ArrowDown.png'
+import TopProjects from './TopProjects';
 
 
 export default function HomePage() {
 	return (
-		<Header></Header>
-	)
+		<>
+			<Header></Header>
+			<div className={styles.centeringDiv}>
+				<div className={styles.centeredColumn}>
+					<TopProjects></TopProjects>
+				</div>
+			</div>
+		</>
+	);
 }
 
 function Header() {
@@ -31,5 +39,5 @@ function Header() {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }

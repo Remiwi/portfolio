@@ -1,6 +1,21 @@
 @import '../variables.scss';
 
 :local {
+	.centeringDiv {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.centeredColumn {
+		display: flex;
+		flex-direction: column;
+
+		@include gutter;
+		width: 100%;
+	}
+
+
 	.headerBackground {
 		background: $color-pink;
 		background: linear-gradient(90deg, $color-pink 0%, $color-blue 100%);
@@ -22,8 +37,7 @@
 		.subheader {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
-			width: 103%;
+			gap: 2vw;
 			margin-top: 2.5%;
 			margin-bottom: 20%;
 		}
