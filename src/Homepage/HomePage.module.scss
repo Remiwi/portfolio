@@ -1,0 +1,57 @@
+@import '../variables.scss';
+
+:local {
+	.headerBackground {
+		background: $color-pink;
+		background: linear-gradient(90deg, $color-pink 0%, $color-blue 100%);
+		width: 100%;
+		aspect-ratio: 2.22;
+		clip-path: polygon(0 0, 100% 0, 100% 82%, 64.4% 100%, 0 82%);
+	}
+
+	.headerContent {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 5%;
+		@include gutter;
+	}
+
+	.headerLeft {
+		margin-top: 4%;
+
+		.subheader {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 103%;
+			margin-top: 2.5%;
+			margin-bottom: 20%;
+		}
+
+		.seework {
+			display: flex;
+			align-items: flex-start;
+			margin-top: 2.5%;
+			margin-bottom: 20%;
+
+			img {
+				width: 8%;
+				margin-right: 6%;
+			}
+		}
+
+		text {
+			font-size: 4.5rem;
+		}
+	}
+
+	.headerRight {
+		display: flex;
+		flex-direction: column;
+		margin-right: 12.5%;
+
+		img {
+			height: 31.5vw;
+		}
+	}
+}
