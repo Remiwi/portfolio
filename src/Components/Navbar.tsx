@@ -4,11 +4,11 @@ import styles from './Navbar.module.scss'
 export default function Navbar() {
 	return (
 		<div className={styles.navbar}>
-			<h3>Top</h3>
-			<h3>Projects</h3>
-			<h3>Experience</h3>
-			<h3>Games</h3>
-			<h3>Videos</h3>
+			<h4>Top</h4>
+			<h4>Projects</h4>
+			<h4>Experience</h4>
+			<h4>Games</h4>
+			<h4>Videos</h4>
 		</div>
 	)
 }

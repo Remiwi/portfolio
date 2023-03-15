@@ -6,14 +6,16 @@
 	display: flex;
 	justify-content: space-between;
 	@include gutter;
-	padding-top: 5vh;
-	padding-bottom: 5vh;
+	padding-top: 3vh;
+	padding-bottom: 10vh;
 	background: $color-grey;
-	background: linear-gradient(0deg, transparent 0%, $color-grey 25%);
+	background: linear-gradient(0deg, transparent 0%, $color-grey 55%);
 	gap: 2vw;
 
-	h3 {
+	h4 {
 		padding-left: 2vw;
 		padding-right: 2vw;
+		width: 20vw;
+		text-align: center;
 	}
 }

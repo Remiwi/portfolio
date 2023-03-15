@@ -7,7 +7,7 @@
 		align-items: center;
 		gap: 8vh;
 		margin-top: 30vh;
-		margin-bottom: 100vh;
+		@include section-spacing;
 	}
 
 	.projectContainer {

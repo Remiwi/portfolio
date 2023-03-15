@@ -4,9 +4,14 @@ $color-pink: #D81E5B;
 $color-blue: #623CEA;
 
 $font-header: 'Karla';
-$font-text: 'IBM Plex Mono';
+$font-text: 'IBM Plex Mono Light';
+$font-mark: 'IBM Plex Mono';
 
 @mixin gutter {
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+@mixin section-spacing {
+	margin-bottom: 30vh;
 }

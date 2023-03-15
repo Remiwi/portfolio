@@ -3,6 +3,8 @@ import styles from './HomePage.module.scss';
 import picture from '../assets/PictureOfMe.png'
 import arrowdown from '../assets/ArrowDown.png'
 import TopProjects from './TopProjects';
+import TechnicalSkills from './TechnicalSkills';
+import Experience from './Experience';
 
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
 			<div className={styles.centeringDiv}>
 				<div className={styles.centeredColumn}>
 					<TopProjects></TopProjects>
+					<TechnicalSkills></TechnicalSkills>
+					<Experience></Experience>
 				</div>
 			</div>
 		</>
