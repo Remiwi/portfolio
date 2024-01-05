@@ -9,7 +9,7 @@ export default function Contacts({ className }: { className?: string }) {
           alt="Github Icon"
           width={100}
           height={100}
-          className="w-6 h-6"
+          className="w-6 h-6 dark:invert dark:brightness-200"
         />
         <a href="https://github.com/Remiwi">GitHub</a>
       </div>
@@ -19,7 +19,7 @@ export default function Contacts({ className }: { className?: string }) {
           alt="LinkedIn Icon"
           width={100}
           height={100}
-          className="w-6 h-6"
+          className="w-6 h-6 dark:invert dark:brightness-200"
         />
         <a href="https://www.linkedin.com/in/remivaughan/">LinkedIn</a>
       </div>
@@ -29,7 +29,7 @@ export default function Contacts({ className }: { className?: string }) {
           alt="Email Icon"
           width={100}
           height={100}
-          className="w-6 h-6"
+          className="w-6 h-6 dark:invert dark:brightness-200"
         />
         <a href="#">Email</a>
       </div>

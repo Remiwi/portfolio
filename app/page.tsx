@@ -38,12 +38,12 @@ function Main() {
             skills={[
               {
                 name: "small",
-                icon: "https://dummyimage.com/480x312.png?text=Project%20Image",
+                icon: "/icons/github.png",
                 hoverWidthClass: "group-hover:w-20",
               },
               {
                 name: "very very large name",
-                icon: "https://dummyimage.com/480x312.png?text=Project%20Image",
+                icon: "/icons/github.png",
                 hoverWidthClass: "group-hover:w-80",
               },
             ]}
@@ -93,23 +93,26 @@ function Project({
   skills = skills ?? [
     {
       name: "Skill Name 1",
-      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      icon: "/icons/github.png",
       hoverWidthClass: "group-hover:w-28",
     },
     {
       name: "Skill Name 2",
-      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      icon: "/icons/github.png",
       hoverWidthClass: "group-hover:w-32",
     },
     {
       name: "Skill Name 3",
-      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      icon: "/icons/github.png",
       hoverWidthClass: "group-hover:w-36",
     },
   ];
 
   return (
-    <div className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors hover:border-blue-200 hover:bg-blue-50">
+    <div
+      className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors
+    hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
+    >
       <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
       <img
         className="object-contain h-full w-96 md:w-60"
@@ -123,23 +126,28 @@ function Project({
         <p className="text-center project-padding md:p-0 md:text-left md:px-0">
           {description}
         </p>
-        <div className="flex flex-row w-full justify-start">
+        <div className="flex flex-row w-full justify-center md:justify-start">
           {skills.map((skill, _) => (
             <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
               <div
                 className={
-                  "flex flex-row p-2 bg-pink-200 rounded-full transition-all duration-500 h-10 w-10 " +
-                  skill.hoverWidthClass
+                  `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-all duration-500 h-10 w-10
+                   bg-fixed bg-gradient-to-r from-indigo-600 to-pink-600
+                   2xl:from-65% 2xl:to-75%
+                   xl:from-70% xl:to-80%
+                   lg:from-75% lg:to-90%
+                   md:from-55% md:to-70%
+                   from-40% to-60% ` + skill.hoverWidthClass
                 }
               >
                 <img
-                  className="rounded-full"
+                  className="rounded-full dark:invert dark:brightness-200"
                   src={skill.icon}
                   alt={skill.name + " Icon"}
                   width={24}
                   height={24}
                 />
-                <p className="overflow-hidden pl-2">
+                <p className="overflow-hidden pl-2 text-black dark:text-zinc-300">
                   {skill.name.replace(" ", "\u00A0")}
                 </p>
               </div>
@@ -167,7 +175,10 @@ function Game({
   image = image ?? "https://dummyimage.com/144x94.png?text=Game%20Image";
 
   return (
-    <div className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors hover:border-blue-200 hover:bg-blue-50">
+    <div
+      className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors
+    hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
+    >
       <img
         className="object-contain h-full w-36"
         src={image}

@@ -15,7 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className="scroll-smooth dark:bg-zinc-900 dark:text-zinc-300"
+    >
       <body className={inter.className}>{children}</body>
     </html>
   );
