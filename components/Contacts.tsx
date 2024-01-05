@@ -11,7 +11,7 @@ export default function Contacts({ className }: { className?: string }) {
           height={100}
           className="w-6 h-6"
         />
-        <a href="#">GitHub</a>
+        <a href="https://github.com/Remiwi">GitHub</a>
       </div>
       <div className="flex flex-row items-center justify-center gap-1">
         <Image
@@ -21,7 +21,7 @@ export default function Contacts({ className }: { className?: string }) {
           height={100}
           className="w-6 h-6"
         />
-        <a href="#">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/remivaughan/">LinkedIn</a>
       </div>
       <div className="flex flex-row items-center justify-center gap-1">
         <Image
