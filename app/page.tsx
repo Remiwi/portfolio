@@ -34,7 +34,20 @@ function Main() {
           Experience
         </h2>
         <div className="flex flex-col gap-12">
-          <Project />
+          <Project
+            skills={[
+              {
+                name: "small",
+                icon: "https://dummyimage.com/480x312.png?text=Project%20Image",
+                hoverWidthClass: "group-hover:w-20",
+              },
+              {
+                name: "very very large name",
+                icon: "https://dummyimage.com/480x312.png?text=Project%20Image",
+                hoverWidthClass: "group-hover:w-80",
+              },
+            ]}
+          />
           <Project />
           <Project />
           <Project />
@@ -57,40 +70,78 @@ function Main() {
   );
 }
 
-function Project() {
+function Project({
+  title,
+  description,
+  image,
+  skills,
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+  skills?: {
+    name: string;
+    icon: string;
+    hoverWidthClass: string;
+  }[];
+}) {
+  title = title ?? "Project Title";
+  description =
+    description ??
+    "Dolor anim fugiat velit reprehenderit elit culpa ad elit qui. Qui anim id laboris mollit exercitation fugiat voluptate duis reprehenderit laborum eiusmod.";
+  image = image ?? "https://dummyimage.com/480x312.png?text=Project%20Image";
+  skills = skills ?? [
+    {
+      name: "Skill Name 1",
+      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      hoverWidthClass: "group-hover:w-28",
+    },
+    {
+      name: "Skill Name 2",
+      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      hoverWidthClass: "group-hover:w-32",
+    },
+    {
+      name: "Skill Name 3",
+      icon: "https://dummyimage.com/24x24.png?text=Skill%20Icon",
+      hoverWidthClass: "group-hover:w-36",
+    },
+  ];
+
   return (
     <div className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100">
-      <h3 className="text-xl font-semibold lg:hidden">Project Title</h3>
+      <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
       <img
         className="object-contain h-full w-96 md:w-60"
-        src="https://dummyimage.com/480x312.png?text=Project%20Image"
+        src={image}
         alt="Project Image"
         width={480}
         height={312}
       />
       <div className="flex flex-col gap-2 pt-2 items-center md:items-start">
-        <h3 className="hidden text-xl font-semibold lg:block">Project Title</h3>
+        <h3 className="hidden text-xl font-semibold lg:block">{title}</h3>
         <p className="text-center project-padding md:p-0 md:text-left md:px-0">
-          Dolor anim fugiat velit reprehenderit elit culpa ad elit qui. Qui anim
-          id laboris mollit exercitation fugiat voluptate duis reprehenderit
-          laborum eiusmod.
+          {description}
         </p>
         <div className="flex flex-row w-full justify-start">
-          {[1, 2, 3].map((_, i) => (
-            <div className="group px-2 first:pl-0 last:pr-0">
+          {skills.map((skill, _) => (
+            <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
               <div
-                key={i}
-                className="flex flex-row p-2 bg-gray-300 rounded-full transition-all duration-500 h-10 w-10 group-hover:w-28"
+                className={
+                  "flex flex-row p-2 bg-gray-300 rounded-full transition-all duration-500 h-10 w-10 " +
+                  skill.hoverWidthClass
+                }
               >
                 <img
                   className="rounded-full"
-                  src="https://dummyimage.com/24x24.png?text=Skill%20Icon"
-                  alt="Skill Icon"
+                  src={skill.icon}
+                  alt={skill.name + " Icon"}
                   width={24}
                   height={24}
                 />
-                <p className="overflow-hidden pl-2">Skill&nbsp;Name</p>{" "}
-                {/* &nbsp; for spacing to avoid line breaks */}
+                <p className="overflow-hidden pl-2">
+                  {skill.name.replace(" ", "\u00A0")}
+                </p>
               </div>
             </div>
           ))}
@@ -100,23 +151,33 @@ function Project() {
   );
 }
 
-function Game() {
+function Game({
+  title,
+  description,
+  image,
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+}) {
+  title = title ?? "Game Title";
+  description =
+    description ??
+    "Dolor anim fugiat velit reprehenderit elit culpa ad elit qui. Qui anim id laboris mollit exercitation fugiat voluptate duis reprehenderit laborum eiusmod.";
+  image = image ?? "https://dummyimage.com/144x94.png?text=Game%20Image";
+
   return (
     <div className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100">
       <img
         className="object-contain h-full w-36"
-        src="https://dummyimage.com/144x94.png?text=Project%20Image"
+        src={image}
         alt="Project Image"
         width={144}
         height={94}
       />
       <div className="flex flex-col gap-2">
-        <h3 className="text-xl font-semibold">Project Title</h3>
-        <p>
-          Dolor anim fugiat velit reprehenderit elit culpa ad elit qui. Qui anim
-          id laboris mollit exercitation fugiat voluptate duis reprehenderit
-          laborum eiusmod.
-        </p>
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
