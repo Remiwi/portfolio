@@ -110,7 +110,7 @@ function Project({
 
   return (
     <div
-      className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors
+      className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-background
     hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
     >
       <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
@@ -131,7 +131,7 @@ function Project({
             <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
               <div
                 className={
-                  `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-all duration-500 h-10 w-10
+                  `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-width duration-500 h-10 w-10
                    bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
                    2xl:from-65% 2xl:to-75%
                    xl:from-70% xl:to-80%

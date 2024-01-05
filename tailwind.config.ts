@@ -17,6 +17,10 @@ const config: Config = {
       transitionDuration: {
         10000: '10000ms',
       },
+      transitionProperty: {
+        'width': 'width',
+        'background': 'background-color',
+      },
       width: {
         22: '5.5rem',
         30: '7.5rem',
