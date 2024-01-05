@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Menu from "@/components/Menu";
 import Contacts from "@/components/Contacts";
 
 export default function Home() {
   return (
-    <div className="page-container">
+    <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
       <Menu />
       <Main />
     </div>
@@ -132,7 +132,7 @@ function Project({
               <div
                 className={
                   `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-all duration-500 h-10 w-10
-                   bg-fixed bg-gradient-to-r from-indigo-600 to-pink-600
+                   bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
                    2xl:from-65% 2xl:to-75%
                    xl:from-70% xl:to-80%
                    lg:from-75% lg:to-90%
