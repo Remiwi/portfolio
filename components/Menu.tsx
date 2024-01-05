@@ -43,7 +43,7 @@ export default function Menu() {
       </div>
       <div className="relative hidden md:flex flex-col gap-4 text-2xl">
         <div
-          className={`absolute w-10 h-10 bg-gray-200 -z-10 -left-1 transition-all duration-300
+          className={`absolute w-10 h-10 bg-blue-100 -z-10 -left-1 transition-all duration-300
           ${selected === "aboutme" ? "-top-1 w-30" : ""}
           ${selected === "experience" ? "top-11 w-34" : ""}
           ${selected === "games" ? "top-23 w-22" : ""}`}

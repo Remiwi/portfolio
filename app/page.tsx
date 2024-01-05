@@ -109,7 +109,7 @@ function Project({
   ];
 
   return (
-    <div className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100">
+    <div className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-colors hover:border-blue-200 hover:bg-blue-50">
       <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
       <img
         className="object-contain h-full w-96 md:w-60"
@@ -128,7 +128,7 @@ function Project({
             <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
               <div
                 className={
-                  "flex flex-row p-2 bg-gray-300 rounded-full transition-all duration-500 h-10 w-10 " +
+                  "flex flex-row p-2 bg-pink-200 rounded-full transition-all duration-500 h-10 w-10 " +
                   skill.hoverWidthClass
                 }
               >
@@ -167,7 +167,7 @@ function Game({
   image = image ?? "https://dummyimage.com/144x94.png?text=Game%20Image";
 
   return (
-    <div className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100">
+    <div className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors hover:border-blue-200 hover:bg-blue-50">
       <img
         className="object-contain h-full w-36"
         src={image}
