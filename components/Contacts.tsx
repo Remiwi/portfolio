@@ -31,7 +31,9 @@ export default function Contacts({ className }: { className?: string }) {
           height={100}
           className="w-6 h-6 dark:invert dark:brightness-200"
         />
-        <a href="#">Email</a>
+        <a href={"mailto:" + atob("cmVtaXZhdWdoYW5jb250YWN0QGdtYWlsLmNvbQ==")}>
+          Email
+        </a>
       </div>
     </div>
   );
