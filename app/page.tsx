@@ -141,6 +141,7 @@ function Main() {
         <div className="flex flex-col gap-6">
           <Game
             title="Blitz"
+            image="/thumbnails/portfolio"
             description={`
               The shoot-em-up style sequel to chess. Play as the blue king,
               survive all five waves, and beat the final boss to win! Made in
@@ -149,6 +150,7 @@ function Main() {
           />
           <Game
             title="Marble Maize Game"
+            image="/thumbnails/portfolio"
             description={`
               A Monkeyball-inspired game about a hamster collecting corn. My
               friends really enjoyed beating each other's times back and forth.
@@ -157,6 +159,7 @@ function Main() {
           />
           <Game
             title="Spirit Solver"
+            image="/thumbnails/portfolio"
             description={`
               Point-and-click adventure about a ghost detective investigating a
               haunted mansion. Was my first real experience working on a collaborative
@@ -217,7 +220,7 @@ function Project({
     hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
     >
       <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
-      <img
+      <Image
         className="object-contain h-full w-96 md:w-60 rounded-md"
         src={image}
         alt="Project Image"
@@ -243,7 +246,7 @@ function Project({
                    from-40% to-60% ` + skill.hoverWidthClass
                 }
               >
-                <img
+                <Image
                   className="rounded-full dark:invert dark:brightness-200"
                   src={skill.icon}
                   alt={skill.name + " Icon"}
@@ -282,7 +285,7 @@ function Game({
       className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-background
     hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
     >
-      <img
+      <Image
         className="object-contain h-full w-36 rounded-md"
         src={image}
         alt="Project Image"
