@@ -53,26 +53,26 @@ function Main() {
               now deprecated Youtube Community Captions. It allows users to create and share
               subtitles for Youtube videos.
             `}
-            image={undefined}
+            image="/thumbnails/youcaption.png"
             skills={[
               {
                 name: "React",
-                icon: "/icons/github.png",
+                icon: "/icons/react.png",
                 hoverWidthClass: "group-hover:w-24",
               },
               {
                 name: "Typescript",
-                icon: "/icons/github.png",
+                icon: "/icons/typescript.png",
                 hoverWidthClass: "group-hover:w-33",
               },
               {
                 name: "Python",
-                icon: "/icons/github.png",
+                icon: "/icons/python.png",
                 hoverWidthClass: "group-hover:w-26",
               },
               {
                 name: "PostgreSQL",
-                icon: "/icons/github.png",
+                icon: "/icons/postgresql.png",
                 hoverWidthClass: "group-hover:w-35",
               },
             ]}
@@ -84,26 +84,27 @@ function Main() {
               track their progress on desirable habits. Users can create group these tasks into
               different routines to sort them or avoid stress.
             `}
+            image="/thumbnails/routines.png"
             skills={[
               {
-                name: "React Native",
-                icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-37",
-              },
-              {
                 name: "Expo",
-                icon: "/icons/github.png",
+                icon: "/icons/expo.png",
                 hoverWidthClass: "group-hover:w-22",
               },
               {
-                name: "Typescript",
-                icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-33",
+                name: "Sqlite",
+                icon: "/icons/sqlite.png",
+                hoverWidthClass: "group-hover:w-24",
               },
               {
-                name: "Sqlite",
-                icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-24",
+                name: "React Native",
+                icon: "/icons/react.png",
+                hoverWidthClass: "group-hover:w-37",
+              },
+              {
+                name: "Typescript",
+                icon: "/icons/typescript.png",
+                hoverWidthClass: "group-hover:w-33",
               },
             ]}
           />
@@ -114,21 +115,22 @@ function Main() {
               interested, and also because I really wanted to try out Tailwind. Any
               feedback? Send me an email!
             `}
+            image="/thumbnails/portfolio.png"
             skills={[
               {
                 name: "React",
-                icon: "/icons/github.png",
+                icon: "/icons/react.png",
                 hoverWidthClass: "group-hover:w-24",
               },
               {
                 name: "Tailwind",
-                icon: "/icons/github.png",
+                icon: "/icons/tailwind.png",
                 hoverWidthClass: "group-hover:w-29",
               },
               {
-                name: "Next.js",
-                icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-26",
+                name: "Typescript",
+                icon: "/icons/typescript.png",
+                hoverWidthClass: "group-hover:w-33",
               },
             ]}
           />
@@ -216,7 +218,7 @@ function Project({
     >
       <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
       <img
-        className="object-contain h-full w-96 md:w-60"
+        className="object-contain h-full w-96 md:w-60 rounded-md"
         src={image}
         alt="Project Image"
         width={480}
@@ -277,11 +279,11 @@ function Game({
 
   return (
     <div
-      className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-colors
+      className="flex flex-row gap-4 align-top border-2 p-2 rounded-lg border-transparent transition-background
     hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
     >
       <img
-        className="object-contain h-full w-36"
+        className="object-contain h-full w-36 rounded-md"
         src={image}
         alt="Project Image"
         width={144}
