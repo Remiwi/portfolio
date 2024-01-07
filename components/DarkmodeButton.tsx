@@ -2,19 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 export default function DarkmodeButton() {
-  if (localStorage === undefined) {
-    const localStorage = {
-      theme: "light",
-    };
-  }
-
-  const [darkmode, setDarkmode] = useState(
-    localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
+  const [darkmode, setDarkmode] = useState(false);
 
   const setDarkmodeTo = (nowDark: boolean) => {
     localStorage.theme = nowDark ? "dark" : "light";
@@ -23,6 +14,7 @@ export default function DarkmodeButton() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    cookies().set("darkmode", nowDark ? "true" : "false");
     setDarkmode(nowDark);
   };
 
