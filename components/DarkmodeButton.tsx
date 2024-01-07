@@ -5,7 +5,9 @@ import Image from "next/image";
 
 export default function DarkmodeButton() {
   if (localStorage === undefined) {
-    return null;
+    const localStorage = {
+      theme: "light",
+    };
   }
 
   const [darkmode, setDarkmode] = useState(

@@ -32,12 +32,12 @@ function Main() {
         <h2>About me</h2>
         <p>
           I started programming in 2017 because I was bored and wanted to make
-          cute things to show people. Seven years later and I'm doing the same
-          thing, but now I know what I'm doing. I think.
+          cute things to show people. Seven years later and I&apos;m doing the
+          same thing, but now I know what I&apos;m doing. I think.
         </p>
         <p className="pt-4">
           I have periods where I hyperfixate on specific technologies. Lately
-          I've been thinking a lot more about web and mobile development. I
+          I&apos;ve been thinking a lot more about web and mobile development. I
           enjoy working all over the stack, especially since gaining a better
           grasp of Tailwind and Next.js.
         </p>
