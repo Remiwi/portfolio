@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { getCookies } from "next-client-cookies/server";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const cookies = getCookies();
+
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className + " dark:bg-zinc-900"}>{children}</body>
-    </html>
+    <CookiesProvider>
+      <html
+        lang="en"
+        className={
+          "scroll-smooth " + (cookies.get("theme") === "dark" ? "dark" : "")
+        }
+      >
+        <body className={inter.className + " dark:bg-zinc-900"}>
+          {children}
+        </body>
+      </html>
+    </CookiesProvider>
   );
 }
