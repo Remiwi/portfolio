@@ -82,7 +82,7 @@ export default function Menu() {
           </button>
         </div>
         <p className="text-lg indent-4 pb-24 md:pb-0">
-          Ut est irure nostrud sit aliqua sint non.
+          Your next full-stack developer
         </p>
       </div>
       <div className="relative hidden md:flex flex-col gap-4 text-2xl">

@@ -24,42 +24,137 @@ function Main() {
       ></div>
       <div>
         <h2>About me</h2>
-        <p className="indent-4">
-          Excepteur sit esse et ut ex Lorem proident officia nisi occaecat.
-          Laborum duis enim elit cillum mollit consequat. Officia labore irure
-          aliquip pariatur adipisicing. Irure minim quis ut id irure consequat
-          exercitation nulla velit id.
+        <p>
+          I started programming in 2017 because I was bored and wanted to make
+          cute things to show people. Seven years later and I'm doing the same
+          thing, but now I know what I'm doing. I think.
         </p>
+        <p className="pt-4">
+          I have periods where I hyperfixate on specific technologies. Lately
+          I've been thinking a lot more about web and mobile development. I
+          enjoy working all over the stack, especially since gaining a better
+          grasp of Tailwind and Next.js.
+        </p>
+        <p className="pt-4">See my projects below!</p>
         <h2 id="Experience" className="pt-32 pb-8">
           Experience
         </h2>
         <div className="flex flex-col gap-12">
           <Project
+            title="YouCaption"
+            description={`
+              An accessibility tool for the deaf and hard of hearing designed to replace the
+              now deprecated Youtube Community Captions. It allows users to create and share
+              subtitles for Youtube videos.
+            `}
+            image={undefined}
             skills={[
               {
-                name: "small",
+                name: "React",
                 icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-20",
+                hoverWidthClass: "group-hover:w-24",
               },
               {
-                name: "very very large name",
+                name: "Typescript",
                 icon: "/icons/github.png",
-                hoverWidthClass: "group-hover:w-80",
+                hoverWidthClass: "group-hover:w-33",
+              },
+              {
+                name: "Python",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-26",
+              },
+              {
+                name: "PostgreSQL",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-35",
               },
             ]}
           />
-          <Project />
-          <Project />
-          <Project />
+          <Project
+            title="Routines App"
+            description={`
+              A mobile app designed to help people organize different parts of their day and
+              track their progress on desirable habits. Users can create group these tasks into
+              different routines to sort them or avoid stress.
+            `}
+            skills={[
+              {
+                name: "React Native",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-37",
+              },
+              {
+                name: "Expo",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-22",
+              },
+              {
+                name: "Typescript",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-33",
+              },
+              {
+                name: "Sqlite",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-24",
+              },
+            ]}
+          />
+          <Project
+            title="remivaughan.com"
+            description={`
+              This website! I made it to show off my favorite projects to whoever is
+              interested, and also because I really wanted to try out Tailwind. Any
+              feedback? Send me an email!
+            `}
+            skills={[
+              {
+                name: "React",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-24",
+              },
+              {
+                name: "Tailwind",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-29",
+              },
+              {
+                name: "Next.js",
+                icon: "/icons/github.png",
+                hoverWidthClass: "group-hover:w-26",
+              },
+            ]}
+          />
         </div>
         <h2 id="Games" className="pt-32 pb-6">
           Games
         </h2>
         <div className="flex flex-col gap-6">
-          <Game />
-          <Game />
-          <Game />
-          <Game />
+          <Game
+            title="Blitz"
+            description={`
+              The shoot-em-up style sequel to chess. Play as the blue king,
+              survive all five waves, and beat the final boss to win! Made in
+              one week as part of a series of games for uni.
+            `}
+          />
+          <Game
+            title="Marble Maize Game"
+            description={`
+              A Monkeyball-inspired game about a hamster collecting corn. My
+              friends really enjoyed beating each other's times back and forth.
+              Made in one week as part of a series of games for uni.
+            `}
+          />
+          <Game
+            title="Spirit Solver"
+            description={`
+              Point-and-click adventure about a ghost detective investigating a
+              haunted mansion. Was my first real experience working on a collaborative
+              codebase, and probably my favorite uni game in terms of visuals.
+            `}
+          />
         </div>
       </div>
       <h3 className="pt-20 w-full text-center text-lg font-semibold md:hidden">

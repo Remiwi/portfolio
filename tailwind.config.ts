@@ -23,8 +23,14 @@ const config: Config = {
       },
       width: {
         22: '5.5rem',
+        23: '5.75rem',
+        26: '6.5rem',
+        29: '7.25rem',
         30: '7.5rem',
+        33: '8.25rem',
         34: '8.5rem',
+        35: '8.75rem',
+        37: '9.25rem',
       },
       spacing: {
         23: '5.75rem',
