@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function DarkmodeButton() {
+  if (localStorage === undefined) {
+    return null;
+  }
+
   const [darkmode, setDarkmode] = useState(
     localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
