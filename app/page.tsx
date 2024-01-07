@@ -2,12 +2,18 @@ import Image from "next/image";
 import { useState } from "react";
 import Menu from "@/components/Menu";
 import Contacts from "@/components/Contacts";
+import DarkmodeButton from "@/components/DarkmodeButton";
 
 export default function Home() {
   return (
-    <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
-      <Menu />
-      <Main />
+    <div>
+      <div className="static md:fixed p-4 pb-1">
+        <DarkmodeButton />
+      </div>
+      <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
+        <Menu />
+        <Main />
+      </div>
     </div>
   );
 }
