@@ -48,6 +48,7 @@ function Main() {
         <div className="flex flex-col gap-12">
           <Project
             title="YouCaption"
+            href="https://github.com/Remiwi/YouCaption"
             description={`
               An accessibility tool for the deaf and hard of hearing designed to replace the
               now deprecated Youtube Community Captions. It allows users to create and share
@@ -79,6 +80,7 @@ function Main() {
           />
           <Project
             title="Routines App"
+            href="https://github.com/Remiwi/RoutinesApp"
             description={`
               A mobile app designed to help people organize different parts of their day and
               track their progress on desirable habits. Users can create group these tasks into
@@ -110,6 +112,7 @@ function Main() {
           />
           <Project
             title="remivaughan.com"
+            href="http://www.remivaughan.com"
             description={`
               This website! I made it to show off my favorite projects to whoever is
               interested, and also because I really wanted to try out Tailwind. Any
@@ -142,6 +145,7 @@ function Main() {
           <Game
             title="Blitz"
             image="/thumbnails/blitz.png"
+            href="https://remivaughan.itch.io/cs3113-exercise-3"
             description={`
               The shoot-em-up style sequel to chess. Play as the blue king,
               survive all five waves, and beat the final boss to win! Made in
@@ -151,6 +155,7 @@ function Main() {
           <Game
             title="Marble Maize Game"
             image="/thumbnails/maize.png"
+            href="https://remivaughan.itch.io/cs3113-exercise-2"
             description={`
               A Monkeyball-inspired game about a hamster collecting corn. My
               friends really enjoyed beating each other's times back and forth.
@@ -160,6 +165,7 @@ function Main() {
           <Game
             title="Spirit Solver"
             image="/thumbnails/spiritsolver.png"
+            href="https://remivaughan.itch.io/cs3113-exercise-6"
             description={`
               Point-and-click adventure about a ghost detective investigating a
               haunted mansion. Was my first real experience working on a collaborative
@@ -180,11 +186,13 @@ function Project({
   title,
   description,
   image,
+  href,
   skills,
 }: {
   title?: string;
   description?: string;
   image?: string;
+  href?: string;
   skills?: {
     name: string;
     icon: string;
@@ -219,7 +227,9 @@ function Project({
       className="flex flex-col lg:gap-4 items-center md:items-start lg:flex-row border-2 p-2 rounded-lg border-transparent transition-background
     hover:border-blue-200 hover:bg-blue-50 dark:hover:border-transparent dark:hover:bg-zinc-950"
     >
-      <h3 className="text-xl font-semibold lg:hidden">{title}</h3>
+      <h3 className="text-xl font-semibold lg:hidden">
+        {href === undefined ? title : <a href={href}>{title}</a>}
+      </h3>
       <Image
         className="object-contain h-full w-96 md:w-60 rounded-md"
         src={image}
@@ -228,7 +238,9 @@ function Project({
         height={312}
       />
       <div className="flex flex-col gap-2 pt-2 items-center md:items-start">
-        <h3 className="hidden text-xl font-semibold lg:block">{title}</h3>
+        <h3 className="hidden text-xl font-semibold lg:block">
+          {href === undefined ? title : <a href={href}>{title}</a>}
+        </h3>
         <p className="text-center project-padding md:p-0 md:text-left md:px-0">
           {description}
         </p>
@@ -267,12 +279,14 @@ function Project({
 
 function Game({
   title,
-  description,
+  href,
   image,
+  description,
 }: {
   title?: string;
-  description?: string;
+  href?: string;
   image?: string;
+  description?: string;
 }) {
   title = title ?? "Game Title";
   description =
@@ -293,7 +307,9 @@ function Game({
         height={94}
       />
       <div className="flex flex-col gap-2">
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-xl font-semibold">
+          {href === undefined ? title : <a href={href}>{title}</a>}
+        </h3>
         <p>{description}</p>
       </div>
     </div>
