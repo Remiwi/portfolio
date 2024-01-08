@@ -141,7 +141,7 @@ function Main() {
         <div className="flex flex-col gap-6">
           <Game
             title="Blitz"
-            image="/thumbnails/portfolio"
+            image="/thumbnails/blitz.png"
             description={`
               The shoot-em-up style sequel to chess. Play as the blue king,
               survive all five waves, and beat the final boss to win! Made in
@@ -150,7 +150,7 @@ function Main() {
           />
           <Game
             title="Marble Maize Game"
-            image="/thumbnails/portfolio"
+            image="/thumbnails/maize.png"
             description={`
               A Monkeyball-inspired game about a hamster collecting corn. My
               friends really enjoyed beating each other's times back and forth.
@@ -159,11 +159,11 @@ function Main() {
           />
           <Game
             title="Spirit Solver"
-            image="/thumbnails/portfolio"
+            image="/thumbnails/spiritsolver.png"
             description={`
               Point-and-click adventure about a ghost detective investigating a
               haunted mansion. Was my first real experience working on a collaborative
-              codebase, and probably my favorite uni game in terms of visuals.
+              codebase. Made in one week as part of a series of games for uni.
             `}
           />
         </div>
