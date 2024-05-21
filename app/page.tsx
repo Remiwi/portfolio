@@ -31,19 +31,22 @@ function Main() {
       <div>
         <h2>About me</h2>
         <p>
-          I started programming in 2017 because I was bored and wanted to make
-          cute things to show people. Seven years later and I&apos;m doing the
-          same thing, but now I know what I&apos;m doing. I think.
+          Hey, I&apos;m Remi! I like to make things with code. Right now
+          I&apos;m really into mobile development. Thanks for checking out my
+          website!
         </p>
         <p className="pt-4">
-          I have periods where I hyperfixate on specific technologies. Lately
-          I&apos;ve been thinking a lot more about web and mobile development. I
-          enjoy working all over the stack, especially since gaining a better
-          grasp of Tailwind and Next.js.
+          I started programming in highschool to make scripts for games I
+          played, which ultimately got me interested in software development in
+          general. I recently graduated from NYU with a CS bachelor&apos;s
+          degree, and you can find me now working on apps or websites that I
+          want to exist. I really enjoy the challenge of creating a visually
+          interesting and functionally clear user interface that fits for
+          whatever project I&apos;m making.
         </p>
-        <p className="pt-4">See my projects below!</p>
+        <p className="pt-4">Check out my projects below!</p>
         <h2 id="Experience" className="pt-32 pb-8">
-          Experience
+          Projects
         </h2>
         <div className="flex flex-col gap-12">
           <Project
