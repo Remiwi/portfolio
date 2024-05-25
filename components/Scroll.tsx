@@ -26,11 +26,14 @@ export default function Scroll() {
   return (
     <div
       className={
-        "px-4 py-1 rounded-full bg-blue-500 flex-shrink w-max animate-bounce z-10 " +
+        // "px-4 py-1 rounded-full bg-blue-200 dark:dark:bg-gradient-to-r from-indigo-600 to-pink-600 dark:border border-zinc-900 flex-shrink w-max animate-bounce z-10 " +
+        "px-4 py-1 rounded-full bg-blue-200 dark:bg-gray-300 dark:border border-zinc-900 flex-shrink w-max animate-bounce z-10 " +
         (hasScrolled ? "animate-fade-out" : "")
       }
     >
-      <p className="text-center text-lg flex-shrink w-max">See more below!</p>
+      <p className="text-center text-lg font-bold flex-shrink w-max dark:dark:bg-gradient-to-r dark:bg-clip-text from-indigo-600 to-pink-600 dark:text-transparent">
+        See more below!
+      </p>
     </div>
   );
 }
