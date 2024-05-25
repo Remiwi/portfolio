@@ -1,35 +1,13 @@
 import Image from "next/image";
-import { useState } from "react";
-import Menu from "@/components/Menu";
 import Contacts from "@/components/Contacts";
-import DarkmodeButton from "@/components/DarkmodeButton";
 import Scroll from "@/components/Scroll";
+import Link from "next/link";
 
-export default function Home() {
+export default function Main() {
   return (
-    <div>
-      <div className="static md:fixed p-4 pb-1">
-        <DarkmodeButton />
-      </div>
-      <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
-        <Menu />
-        <Main />
-      </div>
-    </div>
-  );
-}
-
-function Main() {
-  return (
-    <main
-      id="AboutMe"
-      className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
-    >
-      <div
-        className="hidden md:block"
-        id="Dummy div to make space in grid"
-      ></div>
+    <>
       <div className="relative">
+        <Link href="/test">/test</Link>
         <div className="w-full flex flex-row items-end justify-center absolute top-screen">
           <Scroll />
         </div>
@@ -185,7 +163,7 @@ function Main() {
         Contact me
       </h3>
       <Contacts className="pt-4 px-8 justify-between grid grid-cols-3 text-center md:hidden" />
-    </main>
+    </>
   );
 }
 
