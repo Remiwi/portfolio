@@ -34,6 +34,15 @@ const config: Config = {
       },
       spacing: {
         23: '5.75rem',
+      },
+      keyframes: {
+        fadeOut: {
+            '0%': { opacity: '100%' },
+            '100%': { opacity: '0%' },
+        },
+      },
+      animation: {
+        'fade-out': 'fadeOut 0.5s ease-out forwards',
       }
     },
   },

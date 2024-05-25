@@ -3,6 +3,7 @@ import { useState } from "react";
 import Menu from "@/components/Menu";
 import Contacts from "@/components/Contacts";
 import DarkmodeButton from "@/components/DarkmodeButton";
+import Scroll from "@/components/Scroll";
 
 export default function Home() {
   return (
@@ -28,7 +29,10 @@ function Main() {
         className="hidden md:block"
         id="Dummy div to make space in grid"
       ></div>
-      <div>
+      <div className="relative">
+        <div className="w-full flex flex-row items-end justify-center absolute top-screen">
+          <Scroll />
+        </div>
         <h2>About me</h2>
         <p>
           Hey, I&apos;m Remi! I like to make things with code. Right now
@@ -45,7 +49,7 @@ function Main() {
           whatever project I&apos;m making.
         </p>
         <p className="pt-4">Check out my projects below!</p>
-        <h2 id="Experience" className="pt-32 pb-8">
+        <h2 id="Projects" className="pt-32 pb-8">
           Projects
         </h2>
         <div className="flex flex-col gap-12">
