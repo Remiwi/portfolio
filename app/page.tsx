@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Contacts from "@/components/Contacts";
 import Scroll from "@/components/Scroll";
+import Skills from "@/components/Skills";
 
 export default function Main() {
   return (
@@ -227,34 +228,7 @@ function Project({
         <p className="text-center project-padding md:p-0 md:text-left md:px-0">
           {description}
         </p>
-        <div className="flex flex-row w-full justify-center md:justify-start">
-          {skills.map((skill, _) => (
-            <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
-              <div
-                className={
-                  `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-width duration-500 h-10 w-10
-                   bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
-                   2xl:from-65% 2xl:to-75%
-                   xl:from-70% xl:to-80%
-                   lg:from-75% lg:to-90%
-                   md:from-55% md:to-70%
-                   from-40% to-60% ` + skill.hoverWidthClass
-                }
-              >
-                <Image
-                  className="rounded-full dark:invert dark:brightness-200"
-                  src={skill.icon}
-                  alt={skill.name + " Icon"}
-                  width={24}
-                  height={24}
-                />
-                <p className="overflow-hidden pl-2 text-black dark:text-zinc-300">
-                  {skill.name.replace(" ", "\u00A0")}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Skills skills={skills} />
       </div>
     </div>
   );

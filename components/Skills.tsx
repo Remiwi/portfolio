@@ -53,7 +53,21 @@ const skillsMap = new Map<
 
 export default function Skills(props: {
   skills: ({ name: string; icon: string; hoverWidthClass: string } | string)[];
+  gradient_type?: "home" | "proj";
 }) {
+  const gradient_home = `bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
+  2xl:from-65% 2xl:to-75%
+  xl:from-70% xl:to-80%
+  lg:from-75% lg:to-90%
+  md:from-55% md:to-70%
+  from-40% to-60% `;
+  const gradient_proj = `bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
+  2xl:from-65% 2xl:to-75%
+  xl:from-65% xl:to-75%
+  lg:from-65% lg:to-75%
+  md:from-60% md:to-85%
+  from-40% to-60% `;
+
   return (
     <div className="flex flex-row justify-center md:justify-start">
       {props.skills.map((skill, _) => {
@@ -64,13 +78,11 @@ export default function Skills(props: {
           <div key={skill.name} className="group px-2 first:pl-0 last:pr-0">
             <div
               className={
-                `flex flex-row p-2 bg-pink-200 dark:bg-indigo-700 rounded-full transition-width duration-500 h-10 w-10
-                   bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
-                   2xl:from-65% 2xl:to-75%
-                   xl:from-70% xl:to-80%
-                   lg:from-75% lg:to-90%
-                   md:from-55% md:to-70%
-                   from-40% to-60% ` + skill.hoverWidthClass
+                `flex flex-row p-2 bg-pink-200 rounded-full transition-width duration-500 h-10 w-10 ` +
+                (props.gradient_type === "proj"
+                  ? gradient_proj
+                  : gradient_home) +
+                skill.hoverWidthClass
               }
             >
               <Image

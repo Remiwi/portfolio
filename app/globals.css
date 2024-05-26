@@ -54,4 +54,14 @@
   .top-screen {
     top: calc(100vh - 16rem);
   }
+
+  pre > code {
+    background: none !important;
+    border: none !important;
+  }
+
+  pre > code :is(:where(.dark)) {
+    background: none !important;
+    border: none !important;
+  }
 }
