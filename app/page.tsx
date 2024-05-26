@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Contacts from "@/components/Contacts";
 import Scroll from "@/components/Scroll";
-import Link from "next/link";
 
 export default function Main() {
   return (
     <>
       <div className="relative">
-        <Link href="/test">/test</Link>
         <div className="w-full flex flex-row items-end justify-center absolute top-screen">
           <Scroll />
         </div>
