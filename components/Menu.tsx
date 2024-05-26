@@ -36,9 +36,9 @@ export default function Menu() {
       <div className="relative hidden md:flex flex-col gap-4 text-2xl">
         <div
           className={`absolute w-10 h-10 bg-blue-100 dark:bg-gradient-to-r from-indigo-600 to-pink-600 -z-10 -left-1 transition-all duration-300
-          ${selected === "aboutme" ? "-top-1 w-30" : ""}
+          ${selected === "aboutme" ? "-top-1 w-38" : ""}
           ${selected === "projects" ? "top-11 w-34" : ""}
-          ${selected === "games" ? "top-23 w-22" : ""}`}
+          ${selected === "games" ? "top-23 w-30" : ""}`}
         />
         <a href="#AboutMe">About me</a>
         <a href="#Projects">Projects</a>
