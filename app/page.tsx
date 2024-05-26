@@ -32,7 +32,7 @@ export default function Main() {
         <div className="flex flex-col gap-12">
           <Project
             title="YouCaption"
-            href="https://github.com/Remiwi/YouCaption"
+            href="/YouCaption"
             description={`
               An accessibility tool for the deaf and hard of hearing designed to replace the
               now deprecated Youtube Community Captions. It allows users to create and share
@@ -64,7 +64,7 @@ export default function Main() {
           />
           <Project
             title="Routines App"
-            href="https://github.com/Remiwi/RoutinesApp"
+            href="/RoutinesApp"
             description={`
               A mobile app designed to help people organize different parts of their day and
               track their progress on desirable habits. Users can create group these tasks into
@@ -96,7 +96,7 @@ export default function Main() {
           />
           <Project
             title="remivaughan.com"
-            href="http://www.remivaughan.com"
+            href="/Portfolio"
             description={`
               This website! I made it to show off my favorite projects to whoever is
               interested, and also because I really wanted to try out Tailwind. Any
@@ -129,7 +129,7 @@ export default function Main() {
           <Game
             title="Blitz"
             image="/thumbnails/blitz.png"
-            href="https://remivaughan.itch.io/cs3113-exercise-3"
+            href="/RapidGameDev"
             description={`
               The shoot-em-up style sequel to chess. Play as the blue king,
               survive all five waves, and beat the final boss to win! Made in
@@ -139,7 +139,7 @@ export default function Main() {
           <Game
             title="Marble Maize Game"
             image="/thumbnails/maize.png"
-            href="https://remivaughan.itch.io/cs3113-exercise-2"
+            href="/RapidGameDev"
             description={`
               A Monkeyball-inspired game about a hamster collecting corn. My
               friends really enjoyed beating each other's times back and forth.
@@ -149,7 +149,7 @@ export default function Main() {
           <Game
             title="Spirit Solver"
             image="/thumbnails/spiritsolver.png"
-            href="https://remivaughan.itch.io/cs3113-exercise-6"
+            href="/RapidGameDev"
             description={`
               Point-and-click adventure about a ghost detective investigating a
               haunted mansion. Was my first real experience working on a collaborative

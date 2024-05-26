@@ -49,6 +49,16 @@ const skillsMap = new Map<
     icon: "/icons/tailwind.png",
     hoverWidthClass: "hover:w-20",
   });
+  skillsMap.set("C#", {
+    name: "C#",
+    icon: "/icons/csharp.png",
+    hoverWidthClass: "hover:w-20",
+  });
+  skillsMap.set("Unity", {
+    name: "Unity",
+    icon: "/icons/unity.png",
+    hoverWidthClass: "hover:w-24",
+  });
 })();
 
 export default function Skills(props: {
