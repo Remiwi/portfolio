@@ -8,7 +8,7 @@ export default async function Page({
 }) {
   try {
     const file_contents = await fs.readFile(
-      process.cwd() + `/public/markdown/${params.project}.md`,
+      process.cwd() + `/markdown/${params.project}.md`,
       "utf8"
     );
     return <ProjectMarkdown>{file_contents}</ProjectMarkdown>;
