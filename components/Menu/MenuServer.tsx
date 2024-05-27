@@ -1,12 +1,19 @@
 import Contacts from "@/components/Contacts";
 import MenuClient from "./MenuClient";
 
-export default function MenuServer() {
-  const items = [
-    { id: "aboutme", name: "About Me" },
-    { id: "projects", name: "Projects" },
-    { id: "games", name: "Games" },
-  ];
+export default function MenuServer(props: {
+  items?: { id: string; name: string }[];
+}) {
+  let items: { id: string; name: string }[] = [];
+  if (props.items === undefined) {
+    items = [
+      { id: "aboutme", name: "About Me" },
+      { id: "projects", name: "Projects" },
+      { id: "games", name: "Games" },
+    ];
+  } else {
+    items = props.items;
+  }
 
   return (
     <div className="flex flex-col gap-8 md:fixed md:justify-between md:h-screen">

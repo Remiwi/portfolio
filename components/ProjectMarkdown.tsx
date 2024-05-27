@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Markdown from "markdown-to-jsx";
 import Skills from "@/components/Skills";
+import StringToID from "@/util/StringToID";
 
 function MDImage(props: {
   alt: string;
@@ -39,6 +40,11 @@ function MDHeader(props: { children: React.ReactNode }) {
       {props.children}
     </h1>
   );
+}
+
+function MDHeader2(props: { children: React.ReactNode }) {
+  if (props.children === undefined || props.children === null) return <></>;
+  return <h2 id={StringToID(props.children.toString())}>{props.children}</h2>;
 }
 
 function MDPre(props: { children: React.ReactNode }) {
@@ -83,6 +89,9 @@ export default function ProjectMarkdown(props: { children: string }) {
           },
           h1: {
             component: MDHeader,
+          },
+          h2: {
+            component: MDHeader2,
           },
           p: {
             component: MDp,

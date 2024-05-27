@@ -34,17 +34,7 @@ export default function RootLayout({
               <DarkmodeButton />
             </div>
             <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
-              <Menu />
-              <main
-                id="aboutme"
-                className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
-              >
-                <div
-                  className="hidden md:block"
-                  id="Dummy div to make space in grid"
-                ></div>
-                {children}
-              </main>
+              {children}
             </div>
           </div>
         </body>
