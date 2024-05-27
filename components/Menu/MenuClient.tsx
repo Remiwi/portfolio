@@ -6,6 +6,7 @@ const highlighterExtraWidth = 32;
 
 export default function MenuClient(props: {
   items: { id: string; name: string }[];
+  section_vertical_offset?: number;
 }) {
   const [selected, setSelected] = useState(0);
   const [itemElems, setItemElems] = useState<
@@ -26,6 +27,7 @@ export default function MenuClient(props: {
   }, [props.items]);
 
   useEffect(() => {
+    console.log(props.section_vertical_offset);
     const scrollListener = (_: any) => {
       let new_selected = 0;
       for (let i = 0; i < props.items.length; i++) {
@@ -33,7 +35,11 @@ export default function MenuClient(props: {
           console.log(`itemElems[${i}] is undefined`);
         }
         const elem = itemElems[i].content;
-        if (elem && window.scrollY > elem.offsetTop - 100) {
+        if (
+          elem &&
+          window.scrollY >
+            elem.offsetTop - (props.section_vertical_offset ?? 100)
+        ) {
           new_selected = i;
         }
       }

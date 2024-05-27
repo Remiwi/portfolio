@@ -3,6 +3,7 @@ import MenuClient from "./MenuClient";
 
 export default function MenuServer(props: {
   items?: { id: string; name: string }[];
+  section_vertical_offset?: number;
 }) {
   let items: { id: string; name: string }[] = [];
   if (props.items === undefined) {
@@ -28,7 +29,10 @@ export default function MenuServer(props: {
         </p>
       </div>
       <div className="relative hidden md:flex flex-col gap-4 text-2xl">
-        <MenuClient items={items} />
+        <MenuClient
+          items={items}
+          section_vertical_offset={props.section_vertical_offset}
+        />
         {items.map((item, i) => (
           <a
             className="w-fit"

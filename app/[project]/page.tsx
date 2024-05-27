@@ -24,7 +24,7 @@ export default async function Page({
 
     return (
       <>
-        <Menu items={items} />
+        <Menu items={items} section_vertical_offset={600} />
         <main
           id="aboutme"
           className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
