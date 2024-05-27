@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import ProjectMarkdown from "@/components/ProjectMarkdown";
+import path from "path";
 
 export default async function Page({
   params,
@@ -8,7 +9,7 @@ export default async function Page({
 }) {
   try {
     const file_contents = await fs.readFile(
-      process.cwd() + `/public/markdown/${params.project}.md`,
+      path.join(process.cwd(), "public/markdown", `${params.project}.md`),
       "utf8"
     );
     return <ProjectMarkdown>{file_contents}</ProjectMarkdown>;
