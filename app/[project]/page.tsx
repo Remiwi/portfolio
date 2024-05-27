@@ -12,7 +12,7 @@ export default async function Page({
       "utf8"
     );
     return <ProjectMarkdown>{file_contents}</ProjectMarkdown>;
-  } catch (e) {
-    return <h1>404 - Page not found</h1>;
+  } catch (e: any) {
+    return <h1>404 - Page not found: {e}</h1>;
   }
 }
