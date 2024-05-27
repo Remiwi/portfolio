@@ -13,7 +13,6 @@ export default async function Page({
     );
     return <ProjectMarkdown>{file_contents}</ProjectMarkdown>;
   } catch (e) {
-    // 404
     return <h1>404 - Page not found</h1>;
   }
 }
