@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getCookies } from "next-client-cookies/server";
 import { CookiesProvider } from "next-client-cookies/server";
-import Menu from "@/components/Menu";
+import Menu from "@/components/Menu/MenuServer";
 import DarkmodeButton from "@/components/DarkmodeButton";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,7 +36,7 @@ export default function RootLayout({
             <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
               <Menu />
               <main
-                id="AboutMe"
+                id="aboutme"
                 className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
               >
                 <div

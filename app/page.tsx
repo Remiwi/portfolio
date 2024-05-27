@@ -26,7 +26,7 @@ export default function Main() {
           whatever project I&apos;m making.
         </p>
         <p className="pt-4">Check out my projects below!</p>
-        <h2 id="Projects" className="pt-32 pb-8">
+        <h2 id="projects" className="pt-32 pb-8">
           Projects
         </h2>
         <div className="flex flex-col gap-12">
@@ -122,7 +122,7 @@ export default function Main() {
             ]}
           />
         </div>
-        <h2 id="Games" className="pt-32 pb-6">
+        <h2 id="games" className="pt-32 pb-6">
           Games
         </h2>
         <div className="flex flex-col gap-6">
