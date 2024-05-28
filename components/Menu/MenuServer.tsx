@@ -29,10 +29,14 @@ export default function MenuServer(props: {
         </p>
       </div>
       <div className="relative hidden md:flex flex-col gap-4 text-2xl">
-        <MenuClient
-          items={items}
-          section_vertical_offset={props.section_vertical_offset}
-        />
+        {items.length !== 0 ? (
+          <MenuClient
+            items={items}
+            section_vertical_offset={props.section_vertical_offset}
+          />
+        ) : (
+          <></>
+        )}
         {items.map((item, i) => (
           <a
             className="w-fit"
