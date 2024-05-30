@@ -33,7 +33,9 @@ export default async function Page({
             className="hidden md:block"
             id="Dummy div to make space in grid"
           ></div>
-          <ProjectMarkdown>{file_contents}</ProjectMarkdown>
+          <div className="md:-mt-16">
+            <ProjectMarkdown>{file_contents}</ProjectMarkdown>
+          </div>
         </main>
       </>
     );

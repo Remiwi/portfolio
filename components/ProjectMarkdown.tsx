@@ -35,11 +35,7 @@ function MDSkills(props: { children: React.ReactNode }) {
 }
 
 function MDHeader(props: { children: React.ReactNode }) {
-  return (
-    <h1 className="text-6xl font-bold text-center w-full md:-mt-24 -mt-8 pb-2">
-      {props.children}
-    </h1>
-  );
+  return <h1 className="text-6xl font-bold w-full -mt-8">{props.children}</h1>;
 }
 
 function MDHeader2(props: { children: React.ReactNode }) {
@@ -74,6 +70,37 @@ function MDBlockquote(props: { children: React.ReactNode }) {
 function MDp(props: { children: React.ReactNode }) {
   // TODO: Figure out how to make img not be child of p???
   return <p className="text-lg">{props.children}</p>;
+}
+
+function MDa(props: { children: React.ReactNode; href: string }) {
+  if (props.children === undefined || props.children === null) return <></>;
+  const title = props.children.toString();
+
+  if (title === "!gh") {
+    return (
+      <div className="flex flex-row items-center justify-center gap-1 pr-8">
+        <Image
+          src="/icons/github.png"
+          alt="Github Icon"
+          width={100}
+          height={100}
+          className="w-6 h-6 dark:invert dark:brightness-200"
+        />
+        <a href={props.href} target="_blank">
+          GitHub
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <a
+      className="underline text-blue-500 hover:text-blue-700 visited:text-pink-800 visited:hover:text-pink-500 dark:text-indigo-500 dark:hover:text-indigo-700"
+      href={props.href}
+    >
+      {title}
+    </a>
+  );
 }
 
 export default function ProjectMarkdown(props: { children: string }) {
@@ -132,11 +159,7 @@ export default function ProjectMarkdown(props: { children: string }) {
             component: MDBlockquote,
           },
           a: {
-            component: "a",
-            props: {
-              className:
-                "underline text-blue-500 hover:text-blue-700 visited:text-pink-800 visited:hover:text-pink-500 dark:text-indigo-500 dark:hover:text-indigo-700",
-            },
+            component: MDa,
           },
         },
       }}
