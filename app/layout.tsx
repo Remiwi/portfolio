@@ -29,6 +29,7 @@ export default function RootLayout({
         }
       >
         <body className={inter.className + " dark:bg-zinc-900"}>
+          <script>0</script>
           <div>
             <div className="static md:fixed p-4 pb-1">
               <DarkmodeButton />
