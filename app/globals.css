@@ -64,4 +64,14 @@
     background: none !important;
     border: none !important;
   }
+
+  ul ul {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  ol ol {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 }

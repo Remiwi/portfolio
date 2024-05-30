@@ -44,7 +44,11 @@ function MDHeader(props: { children: React.ReactNode }) {
 
 function MDHeader2(props: { children: React.ReactNode }) {
   if (props.children === undefined || props.children === null) return <></>;
-  return <h2 id={StringToID(props.children.toString())}>{props.children}</h2>;
+  return (
+    <h2 id={StringToID(props.children.toString())} className="pt-6">
+      {props.children}
+    </h2>
+  );
 }
 
 function MDPre(props: { children: React.ReactNode }) {
@@ -109,7 +113,7 @@ export default function ProjectMarkdown(props: { children: string }) {
           ul: {
             component: "ul",
             props: {
-              className: "list-disc pl-10 py-2",
+              className: "list-disc pl-10 py-2 text-lg",
             },
           },
           ol: {
@@ -121,7 +125,7 @@ export default function ProjectMarkdown(props: { children: string }) {
           li: {
             component: "li",
             props: {
-              className: "pl-2",
+              className: "pl-2 pt-2",
             },
           },
           blockquote: {
