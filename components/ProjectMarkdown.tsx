@@ -69,7 +69,7 @@ function MDBlockquote(props: { children: React.ReactNode }) {
 
 function MDp(props: { children: React.ReactNode }) {
   // TODO: Figure out how to make img not be child of p???
-  return <p className="text-lg">{props.children}</p>;
+  return <p className="text-lg pb-2">{props.children}</p>;
 }
 
 function MDa(props: { children: React.ReactNode; href: string }) {
