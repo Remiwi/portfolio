@@ -44,6 +44,21 @@ const config: Config = {
       },
       animation: {
         'fade-out': 'fadeOut 0.5s ease-out forwards',
+      },
+      colors: {
+        mygrad: {
+          0: '#4f46e5',
+          10: '#5d43da',
+          20: '#6b40cf',
+          30: '#793dc4',
+          40: '#873ab9',
+          50: '#9537ae',
+          60: '#a334a3',
+          70: '#b13198',
+          80: '#bf2e8d',
+          90: '#bf2e8d',
+          100: '#db2777',
+        }
       }
     },
   },

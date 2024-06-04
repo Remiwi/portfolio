@@ -63,24 +63,29 @@ const skillsMap = new Map<
 
 export default function Skills(props: {
   skills: ({ name: string; icon: string; hoverWidthClass: string } | string)[];
-  gradient_type?: "home" | "proj";
 }) {
-  const gradient_home = `bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
-  2xl:from-65% 2xl:to-75%
-  xl:from-70% xl:to-80%
-  lg:from-75% lg:to-90%
-  md:from-55% md:to-70%
-  from-40% to-60% `;
-  const gradient_proj = `bg-fixed dark:bg-gradient-to-r from-indigo-600 to-pink-600
-  2xl:from-65% 2xl:to-75%
-  xl:from-65% xl:to-75%
-  lg:from-65% lg:to-75%
-  md:from-60% md:to-85%
-  from-40% to-60% `;
+  const gradient_colors = [
+    ["dark:bg-mygrad-0 ", "dark:bg-mygrad-50 "],
+    ["dark:bg-mygrad-0 ", "dark:bg-mygrad-50 ", "dark:bg-mygrad-100 "],
+    [
+      "dark:bg-mygrad-0 ",
+      "dark:bg-mygrad-30 ",
+      "dark:bg-mygrad-60 ",
+      "dark:bg-mygrad-100 ",
+    ],
+    [
+      "dark:bg-mygrad-0 ",
+      "dark:bg-mygrad-20 ",
+      "dark:bg-mygrad-40 ",
+      "dark:bg-mygrad-60 ",
+      "dark:bg-mygrad-80 ",
+      "dark:bg-mygrad-100 ",
+    ],
+  ];
 
   return (
     <div className="flex flex-row justify-center md:justify-start">
-      {props.skills.map((skill, _) => {
+      {props.skills.map((skill, i) => {
         if (typeof skill === "string") {
           skill = skillsMap.get(skill)!;
         }
@@ -89,9 +94,7 @@ export default function Skills(props: {
             <div
               className={
                 `flex flex-row p-2 bg-pink-200 rounded-full transition-width duration-500 h-10 w-10 ` +
-                (props.gradient_type === "proj"
-                  ? gradient_proj
-                  : gradient_home) +
+                gradient_colors[props.skills.length - 2][i] +
                 skill.hoverWidthClass
               }
             >

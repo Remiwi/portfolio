@@ -29,7 +29,7 @@ function MDSkills(props: { children: React.ReactNode }) {
   const tag_data = JSON.parse(props.children!.toString());
   return (
     <div className="pb-6 flex flex-row justify-center">
-      <Skills skills={tag_data} gradient_type="proj" />
+      <Skills skills={tag_data} />
     </div>
   );
 }
