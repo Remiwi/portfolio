@@ -3,14 +3,28 @@ import Contacts from "@/components/Contacts";
 import Scroll from "@/components/Scroll";
 import Skills from "@/components/Skills";
 import Menu from "@/components/Menu/MenuServer";
+import MenuServer from "@/components/Menu/MenuServer";
 
 export default function Main() {
   return (
     <>
-      <Menu />
+      <div className="flex flex-col gap-8 md:fixed md:justify-between md:h-screen">
+        <div className="flex flex-col gap-2 pt-20 md:pt-52">
+          <h1>
+            <a href="/" className="hover:no-underline">
+              Remi Vaughan
+            </a>
+          </h1>
+          <p className="text-lg indent-4 pb-24 md:pb-0">
+            Your next full-stack developer
+          </p>
+        </div>
+        <MenuServer />
+        <Contacts className="hidden md:flex pb-24 flex-row gap-8" />
+      </div>
       <main
         id="aboutme"
-        className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
+        className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-24"
       >
         <div
           className="hidden md:block"
