@@ -70,7 +70,7 @@ export default function Skills(props: {
     [
       "dark:bg-mygrad-0 ",
       "dark:bg-mygrad-30 ",
-      "dark:bg-mygrad-60 ",
+      "dark:bg-mygrad-70 ",
       "dark:bg-mygrad-100 ",
     ],
     [
