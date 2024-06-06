@@ -10,8 +10,8 @@ export default function ProjectLink(props: {
   alert?: string;
 }) {
   const background = props.highlighted
-    ? "bg-gradient-to-tr from-mygrad-0 to-mygrad-100"
-    : "bg-transparent border border-white";
+    ? "bg-blue-200 shadow-md shadow-zinc-400 dark:shadow-none dark:bg-gradient-to-tr from-mygrad-0 to-mygrad-100"
+    : "bg-transparent border border-slate-400 dark:border-white";
 
   return (
     <a

@@ -58,9 +58,13 @@
     }
   }
 
+  .transition-all-but-color {
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1), color 0ms;
+  }
+
   .top-screen {
     top: calc(100vh - 16rem);
-  }
+  }  
 
   pre > code {
     background: none !important;

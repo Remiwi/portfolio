@@ -136,10 +136,10 @@ function Project(props: {
   const skills = props.skills ?? ["React", "Typescript", "Tailwind"];
 
   return (
-    <div className="rounded-3xl overflow-hidden shadow-2xl  shadow-zinc-950 transition-transform hover:-translate-y-1">
-      <div className="w-full h-full flex flex-col justify-between bg-zinc-950">
+    <div className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform hover:-translate-y-1">
+      <div className="w-full h-full flex flex-col justify-between bg-white dark:bg-zinc-950">
         <div className="relative">
-          <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-50% to-zinc-950" />
+          <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950" />
           <Image
             className="object-contain w-full"
             src={image}
@@ -149,16 +149,18 @@ function Project(props: {
           />
         </div>
         <div className="relative"></div>
-        <div className="w-full flex justify-between items-end p-2">
-          <h3 className="text-xl sm:text-2xl xl:text-3xl font-semibold pb-1">
-            {title}
-          </h3>
-          <div className="flex-grow flex flex-row justify-end items-center gap-2">
-            {props.children}
+        <div className="shadow-inner shadow-gray-300 dark:shadow-none">
+          <div className="w-full flex justify-between items-end p-2">
+            <h3 className="text-xl sm:text-2xl xl:text-3xl font-semibold pb-1">
+              {title}
+            </h3>
+            <div className="flex-grow flex flex-row justify-end items-center gap-2">
+              {props.children}
+            </div>
           </div>
-        </div>
-        <div className="flex flex-row justify-left px-2 pb-2 w-full">
-          <Skills skills={skills} />
+          <div className="flex flex-row justify-left px-2 pb-2 w-full">
+            <Skills skills={skills} />
+          </div>
         </div>
       </div>
     </div>
@@ -175,7 +177,11 @@ function Game(props: {
     props.image ?? "https://dummyimage.com/144x94.png?text=Game%20Image";
 
   return (
-    <div className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all md:hover:bg-zinc-950 md:hover:shadow-lg shadow-zinc-950 md:hover:-translate-y-0.5">
+    <div
+      className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all-but-color md:hover:-translate-y-0.5 box-content
+      hover:bg-gray-50 hover:border border-gray-200 hover:shadow-xl shadow-zinc-400
+      dark:md:hover:bg-zinc-950 dark:md:hover:shadow-lg dark:shadow-zinc-950 dark:hover:border-none"
+    >
       <Image
         className="object-contain h-full w-60 rounded-md md:rounded-none md:rounded-l-md"
         src={image}
@@ -187,7 +193,7 @@ function Game(props: {
         <a className="flex flex-row items-center" href={props.href}>
           <h3 className="text-xl font-semibold inline">{props.title}</h3>
           <Image
-            className="object-contain w-6 h-6 inline pl-2 invert"
+            className="object-contain w-6 h-6 inline pl-2 dark:invert"
             src="/icons/newtab.png"
             alt="New Tab Icon"
             width={24}
