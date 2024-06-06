@@ -54,7 +54,7 @@ export default function MenuClient(props: {
 
   return (
     <div
-      className={`absolute w-10 h-10 bg-blue-100 dark:bg-gradient-to-r from-indigo-600 to-pink-600 -z-10 -left-1 transition-all duration-300
+      className={`absolute w-10 h-10 bg-blue-100 dark:bg-gradient-to-r from-mygrad-0 to-mygrad-100 -z-10 -left-1 transition-all duration-300
           `}
       style={{
         top: `${highlighterTop}rem`,
