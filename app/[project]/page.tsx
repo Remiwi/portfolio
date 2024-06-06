@@ -27,13 +27,13 @@ export default async function Page({
         <Menu items={items} section_vertical_offset={600} />
         <main
           id="aboutme"
-          className="min-h-screen grid grid-cols-1 md:grid-cols-2 pb-8 md:pb-24 pt-0 md:pt-48"
+          className="min-h-screen grid grid-cols-1 lg:grid-cols-2 pb-8 lg:pb-24 pt-0 lg:pt-48"
         >
           <div
-            className="hidden md:block"
+            className="hidden lg:block"
             id="Dummy div to make space in grid"
           ></div>
-          <div className="md:-mt-16">
+          <div className="lg:-mt-16">
             <ProjectMarkdown>{file_contents}</ProjectMarkdown>
           </div>
         </main>

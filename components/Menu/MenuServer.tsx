@@ -17,7 +17,7 @@ export default function MenuServer(props: {
   }
 
   return (
-    <div className="relative hidden md:flex flex-col gap-4 text-2xl">
+    <div className="relative hidden lg:flex flex-col gap-4 text-2xl">
       {items.length !== 0 ? (
         <MenuClient
           items={items}

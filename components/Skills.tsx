@@ -84,7 +84,7 @@ export default function Skills(props: {
   ];
 
   return (
-    <div className="flex flex-row justify-center md:justify-start">
+    <div className="flex flex-row justify-center lg:justify-start">
       {props.skills.map((skill, i) => {
         if (typeof skill === "string") {
           skill = skillsMap.get(skill)!;
@@ -105,7 +105,7 @@ export default function Skills(props: {
                 width={24}
                 height={24}
               />
-              <p className="overflow-hidden pl-2 text-black dark:text-zinc-300">
+              <p className="overflow-hidden pl-2 text-black dark:text-zinc-300 text-base">
                 {skill.name.replace(" ", "\u00A0")}
               </p>
             </div>
