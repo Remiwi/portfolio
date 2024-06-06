@@ -178,9 +178,9 @@ function Game(props: {
 
   return (
     <div
-      className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all-but-color md:hover:-translate-y-0.5 box-content
+      className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all-but-color hover:-translate-y-0.5 box-content
       hover:bg-gray-50 hover:border border-gray-200 hover:shadow-xl shadow-zinc-400
-      dark:md:hover:bg-zinc-950 dark:md:hover:shadow-lg dark:shadow-zinc-950 dark:hover:border-none"
+      dark:hover:bg-zinc-950 dark:hover:shadow-lg dark:shadow-zinc-950 dark:hover:border-none"
     >
       <Image
         className="object-contain h-full w-60 rounded-md md:rounded-none md:rounded-l-md"
