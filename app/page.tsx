@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Contacts from "@/components/Contacts";
-import Scroll from "@/components/Scroll";
 import Skills from "@/components/Skills";
 import MenuServer from "@/components/Menu/MenuServer";
+import ProjectLink from "@/components/ProjectLink";
 
 export default function Main() {
   return (
@@ -54,11 +54,10 @@ export default function Main() {
               image="/thumbnails/routines.png"
               skills={["React Native", "Typescript", "Expo", "Sqlite"]}
             >
-              <ProjectLink href="" logo="/icons/github.png" name="Repo" />
               <ProjectLink
-                href=""
-                logo="/icons/newtab.png"
-                name="Live"
+                href="https://github.com/Remiwi/RoutinesApp"
+                logo="/icons/github.png"
+                name="Repo"
                 highlighted={true}
               />
             </Project>
@@ -67,12 +66,10 @@ export default function Main() {
               image="/thumbnails/youcaption.png"
               skills={["React", "Typescript", "Python", "PostgreSQL"]}
             >
-              {" "}
-              <ProjectLink href="" logo="/icons/github.png" name="Repo" />
               <ProjectLink
-                href=""
-                logo="/icons/newtab.png"
-                name="Live"
+                href="https://github.com/Remiwi/YouCaption"
+                logo="/icons/github.png"
+                name="Repo"
                 highlighted={true}
               />
             </Project>
@@ -81,12 +78,15 @@ export default function Main() {
               image="/thumbnails/portfolio.png"
               skills={["React", "Tailwind", "Typescript"]}
             >
-              {" "}
-              <ProjectLink href="" logo="/icons/github.png" name="Repo" />
               <ProjectLink
-                href=""
                 logo="/icons/newtab.png"
                 name="Live"
+                alert="But you're already here..."
+              />
+              <ProjectLink
+                href="https://github.com/Remiwi/portfolio"
+                logo="/icons/github.png"
+                name="Repo"
                 highlighted={true}
               />
             </Project>
@@ -150,7 +150,9 @@ function Project(props: {
         </div>
         <div className="relative"></div>
         <div className="w-full flex justify-between items-end p-2">
-          <h3 className="text-3xl font-semibold pb-1">{title}</h3>
+          <h3 className="text-xl sm:text-2xl xl:text-3xl font-semibold pb-1">
+            {title}
+          </h3>
           <div className="flex-grow flex flex-row justify-end items-center gap-2">
             {props.children}
           </div>
@@ -160,35 +162,6 @@ function Project(props: {
         </div>
       </div>
     </div>
-  );
-}
-
-function ProjectLink(props: {
-  href: string;
-  logo: string;
-  name: string;
-  highlighted?: boolean;
-}) {
-  const background = props.highlighted
-    ? "bg-gradient-to-tr from-mygrad-0 to-mygrad-100"
-    : "bg-transparent border border-white";
-
-  return (
-    <a
-      href={props.href}
-      className={
-        "flex flex-row items-center h-8 gap-1.5 p-1.5 rounded-lg " + background
-      }
-    >
-      <Image
-        className="object-contain h-full w-full dark:invert dark:brightness-200"
-        src={props.logo}
-        alt={props.name + " Logo"}
-        width={48}
-        height={48}
-      />
-      <p className="pb-0">{props.name}</p>
-    </a>
   );
 }
 
