@@ -136,7 +136,7 @@ function Project(props: {
   const skills = props.skills ?? ["React", "Typescript", "Tailwind"];
 
   return (
-    <div className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform hover:-translate-y-1">
+    <div className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform">
       <div className="w-full h-full flex flex-col justify-between bg-white dark:bg-zinc-950">
         <div className="relative">
           <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950" />
@@ -178,9 +178,9 @@ function Game(props: {
 
   return (
     <div
-      className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all-but-color hover:-translate-y-0.5 box-content
-      hover:bg-gray-50 hover:border border-gray-200 hover:shadow-xl shadow-zinc-400
-      dark:hover:bg-zinc-950 dark:hover:shadow-lg dark:shadow-zinc-950 dark:hover:border-none"
+      className="flex w-fit md:w-full flex-col md:flex-row items-center md:items-start relative rounded-xl transition-all-but-color box-content
+      hover:bg-gray-50 border border-transparent hover:border-gray-200 hover:shadow-xl shadow-zinc-400
+      dark:hover:bg-zinc-950 dark:hover:shadow-lg dark:shadow-zinc-950 dark:hover:border-transparent"
     >
       <Image
         className="object-contain h-full w-60 rounded-md md:rounded-none md:rounded-l-md"

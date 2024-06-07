@@ -18,7 +18,7 @@ export default function ProjectLink(props: {
       href={props.href}
       onClick={props.alert !== undefined ? () => alert(props.alert) : undefined}
       className={
-        "flex flex-row items-center h-8 gap-1.5 p-1.5 rounded-lg cursor-pointer " +
+        "flex flex-row items-center h-8 gap-1.5 p-1.5 rounded-lg cursor-pointer hover:scale-105 transition-all-but-color " +
         background
       }
       target="_blank"
