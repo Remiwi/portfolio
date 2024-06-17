@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import MenuServer from "@/components/Menu/MenuServer";
 import ProjectLink from "@/components/ProjectLink";
 import DarkmodeButton from "@/components/DarkmodeButton";
+import { MyModal } from "@/components/MyModal";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
