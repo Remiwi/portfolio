@@ -3,15 +3,12 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import {
-  fetchGet,
-  fetchGetErrorHandled,
-  fetchPost,
-} from "@/YouCaptionUtils/myFetch";
+import Cookies from "js-cookie";
 
 import Subtable, {
   SubtableData,
 } from "@/components/YouCaptionDemo/Subtable/Subtable";
+import DATA from "@/components/YouCaptionDemo/Subtable/DummyData";
 
 export default function User() {
   // route parameters
@@ -26,18 +23,26 @@ export default function User() {
   // get follower count
   const followersQuery = useQuery({
     queryKey: ["followers", u],
-    queryFn: () =>
-      fetch("http://127.0.0.1:8000/userFollowerCount/" + u).then((res) =>
-        res.json()
-      ),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("following-" + u) === undefined) {
+        return 0;
+      }
+      return 1;
+    },
   });
   const followers = followersQuery.isSuccess ? followersQuery.data : "?";
 
   // get language
   const langaugeQuery = useQuery({
     queryKey: ["language"],
-    queryFn: () =>
-      fetchGetErrorHandled("http://127.0.0.1:8000/currentLanguage"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
+      return Cookies.get("user-language") || "no language defined (IMPL ERROR)";
+    },
   });
   const userLang = langaugeQuery.isSuccess
     ? langaugeQuery.data
@@ -46,10 +51,10 @@ export default function User() {
   // get subtitles
   const subtitlesQuery = useQuery({
     queryKey: ["subtitles", "author", u],
-    queryFn: () =>
-      fetchGet("http://127.0.0.1:8000/userPageCaptionData/" + u).then((r) =>
-        r.json()
-      ),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      return DATA.filter((s) => s.author === u);
+    },
   });
   const subtitles: SubtableData = subtitlesQuery.isSuccess
     ? subtitlesQuery.data
@@ -60,8 +65,16 @@ export default function User() {
 
   const followQuery = useQuery({
     queryKey: ["follow", u],
-    queryFn: () =>
-      fetchGetErrorHandled("http://127.0.0.1:8000/isFollowing/" + u),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
+      return {
+        isSelf: Cookies.get("user-username") === u,
+        following: Cookies.get("following-" + u) === "true",
+      };
+    },
   });
   const isFollowing = followQuery.isSuccess
     ? followQuery.data.following
@@ -69,12 +82,12 @@ export default function User() {
 
   const followMutation = useMutation({
     mutationKey: ["follow", u],
-    mutationFn: (follow: boolean) => {
-      if (follow) {
-        return fetchPost("http://127.0.0.1:8000/follow/" + u);
-      } else {
-        return fetchPost("http://127.0.0.1:8000/unfollow/" + u);
+    mutationFn: async (follow: boolean) => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
       }
+      Cookies.set("following-" + u, follow.toString());
     },
     onMutate: () => {
       qc.setQueryData(["follow", u], {
@@ -83,7 +96,7 @@ export default function User() {
       });
       qc.setQueryData(
         ["followers", u],
-        (parseInt(followers) + (isFollowing ? -1 : 1)).toString()
+        (Number(followers) + (isFollowing ? -1 : 1)).toString()
       );
     },
   });
