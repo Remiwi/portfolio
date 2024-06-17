@@ -1,12 +1,28 @@
+import "./globals.css";
+
 import Image from "next/image";
 import Contacts from "@/components/Contacts";
 import Skills from "@/components/Skills";
 import MenuServer from "@/components/Menu/MenuServer";
 import ProjectLink from "@/components/ProjectLink";
+import DarkmodeButton from "@/components/DarkmodeButton";
+
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      <div className="static lg:fixed p-4 pb-1">
+        <DarkmodeButton />
+      </div>
+      <div className="page-container dark:bg-zinc-900 dark:text-zinc-300">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function Main() {
   return (
-    <>
+    <Layout>
       <div className="lg:col-span-2 flex flex-col gap-8 lg:fixed top-0 pt-20 lg:pt-48 lg:justify-between lg:h-screen">
         <div className="flex flex-col gap-2">
           <h1>
@@ -70,6 +86,11 @@ export default function Main() {
                 href="https://github.com/Remiwi/YouCaption"
                 logo="/icons/github.png"
                 name="Repo"
+              />
+              <ProjectLink
+                href="/YouCaption"
+                logo="/icons/newtab.png"
+                name="Live"
                 highlighted={true}
               />
             </Project>
@@ -120,7 +141,7 @@ export default function Main() {
         </h3>
         <Contacts className="pt-4 px-8 justify-between grid grid-cols-3 text-center lg:hidden" />
       </main>
-    </>
+    </Layout>
   );
 }
 

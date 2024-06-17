@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.45.0",
+    "@tanstack/react-table": "^8.17.3",
+    "@types/js-cookie": "^3.0.6",
+    "@xzdarcy/react-timeline-editor": "^0.1.9",
+    "js-cookie": "^3.0.5",
     "markdown-to-jsx": "^7.4.7",
     "next": "^14.2.3",
     "next-client-cookies": "^1.1.0",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "latest",
