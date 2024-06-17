@@ -6,13 +6,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import FollowTable from "@/components/YouCaptionDemo/FollowTable/FollowTable";
 import SubscriptionTable from "@/components/YouCaptionDemo/SubscriptionTable/SubscriptionTable";
 import { useRouter } from "next/navigation";
-
-import {
-  fetchGet,
-  fetchPost,
-  fetchPostJSON,
-  fetchGetErrorHandled,
-} from "@/YouCaptionUtils/myFetch";
+import Cookies from "js-cookie";
 
 type NotifSettings = {
   getNotifs: 0 | 1 | 2 | null;
@@ -29,7 +23,13 @@ export default function SettingsPage() {
   // Get username
   const usernameQuery = useQuery({
     queryKey: ["username"],
-    queryFn: () => fetchGetErrorHandled("http://127.0.0.1:8000/getUsername"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return { username: "", signedIn: false };
+      }
+      return { username: Cookies.get("user-username"), signedIn: true };
+    },
   });
   const currentUsername = usernameQuery.isSuccess
     ? usernameQuery.data.username
@@ -37,8 +37,13 @@ export default function SettingsPage() {
 
   // Update username
   const { mutate: mutateUsername } = useMutation({
-    mutationFn: () =>
-      fetchPost("http://127.0.0.1:8000/updateUsername/" + username),
+    mutationFn: async (username: string) => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("No Session");
+      }
+      Cookies.set("user-username", username);
+    },
     onSuccess: () => {
       queryClient.setQueryData(["username"], {
         username: username,
@@ -50,15 +55,25 @@ export default function SettingsPage() {
   // Get language
   const languageQuery = useQuery({
     queryKey: ["language"],
-    queryFn: () =>
-      fetchGetErrorHandled("http://127.0.0.1:8000/currentLanguage"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return "";
+      }
+      return Cookies.get("user-language") || "";
+    },
   });
   const currentLanguage = languageQuery.isSuccess ? languageQuery.data : "";
 
   // Update language
   const { mutate: mutateLanguage } = useMutation({
-    mutationFn: () =>
-      fetchPost("http://127.0.0.1:8000/updateLanguage/" + language),
+    mutationFn: async (language: string) => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("No Session");
+      }
+      Cookies.set("user-language", language);
+    },
     onSuccess: () => {
       queryClient.setQueryData(["language"], language);
     },
@@ -67,14 +82,40 @@ export default function SettingsPage() {
   // Get follow list
   const followQuery = useQuery({
     queryKey: ["followList"],
-    queryFn: () => fetchGetErrorHandled("http://127.0.0.1:8000/followingList"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return { followingList: [] };
+      }
+      const followList = JSON.parse(
+        Cookies.get("follow-list") || "[]"
+      ) as string[];
+      return {
+        followingList: followList.map((v) => {
+          return { username: v };
+        }),
+      };
+    },
   });
   const following = followQuery.isSuccess ? followQuery.data.followingList : [];
 
   // Get subscription list
   const savedQuery = useQuery({
     queryKey: ["saved"],
-    queryFn: () => fetchGetErrorHandled("http://127.0.0.1:8000/savedVideoList"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return { savedList: [] };
+      }
+      const savedList = JSON.parse(
+        Cookies.get("saved-list") || "[]"
+      ) as string[];
+      return {
+        savedList: savedList.map((v) => {
+          return { videoID: v };
+        }),
+      };
+    },
   });
   const savedVideos = savedQuery.isSuccess ? savedQuery.data.savedList : [];
 
@@ -87,18 +128,30 @@ export default function SettingsPage() {
   );
   const followingNotifQuery = useQuery({
     queryKey: ["followingNotifSettings"],
-    queryFn: () =>
-      fetchGetErrorHandled("http://127.0.0.1:8000/followingNotifSettings"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return { getNotifs: null, onlyLangMatch: false } as NotifSettings;
+      }
+      return {
+        getNotifs: parseInt(Cookies.get("following-notif") || "0"),
+        onlyLangMatch: Cookies.get("following-lang-match") === "true",
+      } as NotifSettings;
+    },
   });
   if (followingNotifQuery.isSuccess && followingNotifState.getNotifs === null) {
     setFollowingNotifState(followingNotifQuery.data);
   }
   const followingNotifMutation = useMutation({
     mutationKey: ["followingNotifSettings"],
-    mutationFn: (settings: NotifSettings) =>
-      fetchPostJSON("http://127.0.0.1:8000/updateFollowingNotifSettings", {
-        body: JSON.stringify(settings),
-      }),
+    mutationFn: async (settings: NotifSettings) => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("No Session");
+      }
+      Cookies.set("following-notif", settings.getNotifs?.toString() || "0");
+      Cookies.set("following-lang-match", settings.onlyLangMatch.toString());
+    },
   });
 
   const [videoNotifState, setVideoNotifState] = useState<NotifSettings>({
@@ -107,25 +160,37 @@ export default function SettingsPage() {
   });
   const videoNotifQuery = useQuery({
     queryKey: ["videoNotifSettings"],
-    queryFn: () =>
-      fetchGetErrorHandled("http://127.0.0.1:8000/videoNotifSettings"),
+    queryFn: async () => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        return { getNotifs: null, onlyLangMatch: false } as NotifSettings;
+      }
+      return {
+        getNotifs: parseInt(Cookies.get("video-notif") || "0"),
+        onlyLangMatch: Cookies.get("video-lang-match") === "true",
+      } as NotifSettings;
+    },
   });
   if (videoNotifQuery.isSuccess && videoNotifState.getNotifs === null) {
     setVideoNotifState(videoNotifQuery.data);
   }
   const videoNotifMutation = useMutation({
     mutationKey: ["videoNotifSettings"],
-    mutationFn: (settings: NotifSettings) =>
-      fetchPostJSON("http://127.0.0.1:8000/updateVideoNotifSettings", {
-        body: JSON.stringify(settings),
-      }),
+    mutationFn: async (settings: NotifSettings) => {
+      await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("No Session");
+      }
+      Cookies.set("video-notif", settings.getNotifs?.toString() || "0");
+      Cookies.set("video-lang-match", settings.onlyLangMatch.toString());
+    },
   });
 
   if (usernameQuery.isLoading) {
     return <h1>Loading...</h1>;
   }
 
-  if (usernameQuery.data.detail === "No Session") {
+  if (usernameQuery.data!.signedIn === false) {
     router.push("/YouCaption/");
     return <h1>Redirecting...</h1>;
   }
@@ -173,10 +238,10 @@ export default function SettingsPage() {
           <button
             onClick={() => {
               if (username !== "") {
-                mutateUsername();
+                mutateUsername(username);
               }
               if (language !== "") {
-                mutateLanguage();
+                mutateLanguage(language);
               }
               if (followingNotifState.getNotifs !== null) {
                 followingNotifMutation.mutate(followingNotifState);

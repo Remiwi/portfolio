@@ -13,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { fetchPost } from "@/YouCaptionUtils/myFetch";
+import Cookies from "js-cookie";
 
 import styles from "./SubscriptionTable.module.css";
 
@@ -29,8 +29,21 @@ export default function SubscriptionTable({ videos }: SubscriptionTableProps) {
   const qc = useQueryClient();
   const unsaveQuery = useMutation({
     mutationKey: ["saved"],
-    mutationFn: (videoID: string) =>
-      fetchPost("http://127.0.0.1:8000/unsaveVideo/" + videoID),
+    mutationFn: async (videoID: string) => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
+      Cookies.set("saved-" + videoID, "false");
+      const savedList = JSON.parse(
+        Cookies.get("saved-list") || "[]"
+      ) as string[];
+      const i = savedList.indexOf(videoID);
+      if (i !== -1) {
+        savedList.splice(i, 1);
+      }
+      Cookies.set("saved-list", JSON.stringify(savedList));
+    },
     onSuccess: () => {
       qc.invalidateQueries({
         queryKey: ["saved"],

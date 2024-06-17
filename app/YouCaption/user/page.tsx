@@ -88,6 +88,18 @@ export default function User() {
         throw new Error("User not signed in");
       }
       Cookies.set("following-" + u, follow.toString());
+      const followList = JSON.parse(
+        Cookies.get("follow-list") ?? "[]"
+      ) as string[];
+      if (follow) {
+        followList.push(u);
+      } else {
+        const i = followList.indexOf(u);
+        if (i !== -1) {
+          followList.splice(i, 1);
+        }
+      }
+      Cookies.set("follow-list", JSON.stringify(followList));
     },
     onMutate: () => {
       qc.setQueryData(["follow", u], {

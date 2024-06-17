@@ -13,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { fetchGet, fetchPost } from "@/YouCaptionUtils/myFetch";
+import Cookies from "js-cookie";
 
 import styles from "./FollowTable.module.css";
 
@@ -29,8 +29,21 @@ export default function FollowTable({ users }: FollowTableProps) {
   const qc = useQueryClient();
   const unfollowQuery = useMutation({
     mutationKey: ["followList"],
-    mutationFn: (username: string) =>
-      fetchPost("http://127.0.0.1:8000/unfollow/" + username),
+    mutationFn: async (username: string) => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
+      Cookies.set("following-" + username, "false");
+      const followList = JSON.parse(
+        Cookies.get("follow-list") || "[]"
+      ) as string[];
+      const i = followList.indexOf(username);
+      if (i !== -1) {
+        followList.splice(i, 1);
+      }
+      Cookies.set("follow-list", JSON.stringify(followList));
+    },
     onSuccess: () => {
       qc.invalidateQueries({
         queryKey: ["followList"],

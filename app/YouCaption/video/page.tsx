@@ -96,6 +96,18 @@ export default function Video() {
     mutationFn: async (save: boolean) => {
       await new Promise((r) => setTimeout(r, 500));
       Cookies.set("saved-" + v, save.toString());
+      const savedList = JSON.parse(
+        Cookies.get("saved-list") ?? "[]"
+      ) as string[];
+      if (save) {
+        savedList.push(v);
+      } else {
+        const i = savedList.indexOf(v);
+        if (i !== -1) {
+          savedList.splice(i, 1);
+        }
+      }
+      Cookies.set("saved-list", JSON.stringify(savedList));
     },
     onSuccess: (_, save) => {
       qc.setQueryData(["savedVideo", v], save);
