@@ -81,6 +81,9 @@ export default function Video() {
     queryKey: ["savedVideo", v],
     queryFn: async () => {
       await new Promise((r) => setTimeout(r, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
       return Cookies.get("saved-" + v) === "true";
     },
   });

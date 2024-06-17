@@ -67,4 +67,8 @@ button {
 
 button:hover {
   background-color: var(--color-grey-light);
-} 
+}
+
+.noselect {
+  user-select: none;
+}

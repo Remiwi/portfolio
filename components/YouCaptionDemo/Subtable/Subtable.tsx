@@ -145,14 +145,16 @@ export default function Subtable({ subtitles, page }: SubtableProps) {
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th className={styles[header.id]} key={header.id}>
-                  <div>
+                  <div
+                    onClick={header.column.getToggleSortingHandler()}
+                    className="noselect"
+                  >
                     {header.column.getCanSort() && (
                       <Image
                         src="/YouCaptionIcons/sort.png"
                         alt="Sort icon"
                         width={100}
                         height={100}
-                        onClick={header.column.getToggleSortingHandler()}
                       />
                     )}
                     {header.column.columnDef.header as any}
@@ -259,6 +261,9 @@ function Stars({ defaultValue, captionID }: StarsProps) {
     queryKey: ["rating", captionID],
     queryFn: async () => {
       await new Promise((resolve) => setTimeout(resolve, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
       const val = Cookies.get("rating-" + captionID) ?? 0;
       return Number(val);
     },
@@ -269,6 +274,9 @@ function Stars({ defaultValue, captionID }: StarsProps) {
     mutationKey: ["rating", captionID],
     mutationFn: async (ratingValue: number) => {
       await new Promise((resolve) => setTimeout(resolve, 500));
+      if (Cookies.get("user-signedIn") !== "true") {
+        throw new Error("User not signed in");
+      }
       Cookies.set("rating-" + captionID, ratingValue.toString());
       return ratingValue;
     },
@@ -276,6 +284,7 @@ function Stars({ defaultValue, captionID }: StarsProps) {
       qc.setQueryData(["rating", captionID], ratingValue);
     },
     onError: (error) => {
+      qc.setQueryData(["rating", captionID], 0);
       qc.invalidateQueries({
         queryKey: ["rating", captionID],
       });
