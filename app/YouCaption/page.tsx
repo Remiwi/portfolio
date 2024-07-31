@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import extractVideoID from "@/YouCaptionUtils/extractVideoID";
+import { MyModal } from "@/components/MyModal";
 
 export default function Home() {
   const router = useRouter();
@@ -28,6 +29,12 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      <MyModal
+        title="This is just a demo!"
+        text="Thank you for visiting the YouCaption demo. Due to the project requirements, many features were reliant on the backend and database, which I have not included. Luckily, most of what I worked on for this was front-end, which you can still see. I ported as many of the backend-dependent features to working with dummy data and cookies, but some things may not behave as expected."
+        visible={false}
+        close={() => {}}
+      />
       <div className={styles.search}>
         <h1>What will you caption?</h1>
         <div className={styles.searchBar}>
