@@ -70,6 +70,7 @@ export default function Main() {
               title="Routines App"
               image="/thumbnails/routines.png"
               skills={["React Native", "Typescript", "Expo", "Sqlite"]}
+              id="routines"
             >
               <ProjectLink
                 href="https://github.com/Remiwi/RoutinesApp"
@@ -82,6 +83,7 @@ export default function Main() {
               title="YouCaption"
               image="/thumbnails/youcaption.png"
               skills={["React", "Typescript", "Python", "PostgreSQL"]}
+              id="youcaption"
             >
               <ProjectLink
                 href="https://github.com/Remiwi/YouCaption"
@@ -99,6 +101,7 @@ export default function Main() {
               title="This Portfolio!"
               image="/thumbnails/portfolio.png"
               skills={["React", "Tailwind", "Typescript"]}
+              id="portfolio"
             >
               <ProjectLink
                 logo="/icons/newtab.png"
@@ -151,6 +154,7 @@ function Project(props: {
   image?: string;
   skills?: string[];
   children?: React.ReactNode;
+  id?: string;
 }) {
   const title = props.title ?? "Project Title";
   const image =
@@ -158,7 +162,10 @@ function Project(props: {
   const skills = props.skills ?? ["React", "Typescript", "Tailwind"];
 
   return (
-    <div className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform">
+    <div
+      className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform"
+      id={props.id}
+    >
       <div className="w-full h-full flex flex-col justify-between bg-white dark:bg-zinc-950">
         <div className="relative">
           <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950" />
