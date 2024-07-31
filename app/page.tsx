@@ -67,6 +67,25 @@ export default function Main() {
           </h2>
           <div className="flex flex-col gap-16">
             <Project
+              title="Timetracker App"
+              image="/thumbnails/timetracker.png"
+              skills={[
+                "React Native",
+                "Typescript",
+                "Expo",
+                "Tailwind",
+                "Sqlite",
+              ]}
+              id="timetracker"
+            >
+              <ProjectLink
+                href="https://github.com/Remiwi/TimeTracker"
+                logo="/icons/github.png"
+                name="Repo"
+                highlighted={true}
+              />
+            </Project>
+            <Project
               title="Routines App"
               image="/thumbnails/routines.png"
               skills={["React Native", "Typescript", "Expo", "Sqlite"]}
