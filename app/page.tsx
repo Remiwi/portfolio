@@ -55,10 +55,10 @@ export default function Main() {
               I started programming in highschool to make scripts for games I
               played, which ultimately got me interested in software development
               in general. I recently graduated from NYU with a CS
-              bachelor&apos;s degree, and you can find me now working on apps or
-              websites that I want to exist. I really enjoy the challenge of
-              creating a visually interesting and functionally clear user
-              interface that fits for whatever project I&apos;m making.
+              bachelor&apos;s degree, and you can find me now creating apps and
+              websites for myself. I really enjoy the challenge of creating a
+              visually interesting and functionally clear user interface that
+              fits for whatever project I&apos;m making.
             </p>
             <p>Check out my projects below!</p>
           </div>
