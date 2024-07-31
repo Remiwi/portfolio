@@ -108,13 +108,14 @@ export default function Main() {
                 href="https://github.com/Remiwi/YouCaption"
                 logo="/icons/github.png"
                 name="Repo"
+                highlighted={true}
               />
-              <ProjectLink
+              {/* <ProjectLink
                 href="/YouCaption"
                 logo="/icons/newtab.png"
                 name="Live"
                 highlighted={true}
-              />
+              /> */}
             </Project>
             <Project
               title="This Portfolio!"
