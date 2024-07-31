@@ -47,7 +47,7 @@ const skillsMap = new Map<
   skillsMap.set("Tailwind", {
     name: "Tailwind",
     icon: "/icons/tailwind.png",
-    hoverWidthClass: "hover:w-20",
+    hoverWidthClass: "hover:w-28",
   });
   skillsMap.set("C#", {
     name: "C#",
