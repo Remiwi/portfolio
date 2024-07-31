@@ -117,7 +117,7 @@ export default function Main() {
             </Project>
           </div>
           <h2 id="games" className="pt-32 pb-8">
-            Games
+            My Best Games
           </h2>
           <div className="flex flex-col items-center gap-12 pb-24">
             <Game
