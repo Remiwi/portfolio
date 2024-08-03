@@ -67,7 +67,14 @@ export default function Main() {
           </h2>
           <div className="flex flex-col gap-16">
             <Project
-              title="Timetracker App"
+              title="Temporal"
+              description={[
+                "Everyone wants to be better at using their time, and the best way to do that is to know how you're using it now.",
+                "Think of all the things you want to spent more time doing - exercise, reading, learning, etc. - all of these are projects in your life.",
+                "In Temporal, you can track how much time you spend on these projects by running timers. Temporal makes this easy by letting you create",
+                "many templates for instantly starting timers, as well as quick access to useful controls for editing your timer on the fly.",
+                "Temporal also allows you to sync your data to the cloud, specifically using Toggl Track, a popular time tracking backend service.",
+              ].join(" ")}
               image="/thumbnails/timetracker.png"
               skills={[
                 "React Native",
