@@ -171,6 +171,7 @@ export default function Main() {
 
 function Project(props: {
   title?: string;
+  description?: string;
   image?: string;
   skills?: string[];
   children?: React.ReactNode;
@@ -187,8 +188,13 @@ function Project(props: {
       id={props.id}
     >
       <div className="w-full h-full flex flex-col justify-between bg-white dark:bg-zinc-950">
-        <div className="relative">
-          <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950" />
+        <div className="relative group">
+          <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950 z-10" />
+          <div className="absolute w-full h-full group-hover:opacity-100 opacity-0 transition-all p-4 bg-myhoverbg-100 dark:bg-myhoverbg-0">
+            <p className="font-semibold text-black dark:text-white">
+              {props.description}
+            </p>
+          </div>
           <Image
             className="object-contain w-full"
             src={image}
