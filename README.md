@@ -5,3 +5,4 @@ TODO:
 - Add descriptions to all projects
 - Make about-me more personal
 - Add discord bot to projects
+- Add link to social media when I make one
