@@ -69,11 +69,9 @@ export default function Main() {
             <Project
               title="Temporal"
               description={[
-                "Everyone wants to be better at using their time, and the best way to do that is to know how you're using it now.",
-                "Think of all the things you want to spent more time doing - exercise, reading, learning, etc. - all of these are projects in your life.",
-                "In Temporal, you can track how much time you spend on these projects by running timers. Temporal makes this easy by letting you create",
-                "many templates for instantly starting timers, as well as quick access to useful controls for editing your timer on the fly.",
-                "Temporal also allows you to sync your data to the cloud, specifically using Toggl Track, a popular time tracking backend service.",
+                "A time-tracking app that helps you keep track of your daily activities and how much time you spend on them.",
+                "Run timers with associated projects, descriptions, and tags. Later, use entries made to review how you spent your time.",
+                "Comes with many feautures designed to make interactions faster and easier, as well as automatic backups and cloud sync.",
               ].join(" ")}
               image="/thumbnails/timetracker.png"
               skills={[
