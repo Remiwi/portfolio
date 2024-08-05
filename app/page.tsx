@@ -81,7 +81,7 @@ export default function Main() {
                 "Tailwind",
                 "Sqlite",
               ]}
-              id="timetracker"
+              id="temporal"
             >
               <ProjectLink
                 href="https://github.com/Remiwi/TimeTracker"
