@@ -11,6 +11,7 @@ export default function MenuServer(props: {
       { id: "aboutme", name: "About Me" },
       { id: "projects", name: "Projects" },
       { id: "games", name: "Games" },
+      { id: "coursework", name: "Misc Coursework" },
     ];
   } else {
     items = props.items;

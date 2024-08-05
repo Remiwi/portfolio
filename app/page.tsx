@@ -147,24 +147,45 @@ export default function Main() {
             My Best Games
           </h2>
           <div className="flex flex-col items-center gap-12 pb-24">
-            <Game
+            <MiniProject
               title="Blitz"
               href="https://remivaughan.itch.io/cs3113-exercise-3"
               image="/thumbnails/blitz.png"
               description="Fast-paced chess-themed shoot-em-up game, inspired by the style of old SNES games"
             />
-            <Game
+            <MiniProject
               title="Marble Maize Game"
               href="https://remivaughan.itch.io/cs3113-exercise-2"
               image="/thumbnails/maize.png"
               description="3D obstacle course where you play as a hamster in a ball, inspired by Monkey Ball"
             />
-            <Game
+            <MiniProject
               title="Spirit Solver"
               href="https://remivaughan.itch.io/cs3113-exercise-6"
               image="/thumbnails/spiritsolver.png"
               description="Point-and-click detective adventure game, inspired by the style of Paper Mario"
             />
+          </div>
+          <h2 id="coursework" className="pt-32 pb-8">
+            Misc Coursework
+          </h2>
+          <div className="flex flex-col items-center gap-12 pb-24">
+            <MiniProject
+              title="ML-based Connect-4 Opponent AI"
+              href="https://github.com/Gaurang-1402/Machine-Learning-final-project"
+              description="AI that uses an ML algorithm under the hood to determine the best move to make in Connect-4"
+              image="/thumbnails/connect-4.png"
+            />
+            <MiniProject
+              title="Commercial Flight Database Prototype"
+              description="Web-app for display and management of user-generated commerical flight data built for Databases course"
+              image="/thumbnails/frs.png"
+            />
+            {/* <MiniProject
+              title="Lasyre Synthesizer"
+              description="Arduino-based synthesizer that uses an array of lasers to detect finger position and make sound!"
+              image="/thumbnails/lasyre.png"
+            /> */}
           </div>
         </div>
         <h3 className="pt-20 w-full text-center text-lg font-semibold lg:hidden">
@@ -229,14 +250,13 @@ function Project(props: {
   );
 }
 
-function Game(props: {
+function MiniProject(props: {
   title?: string;
   image?: string;
   description?: string;
   href?: string;
 }) {
-  const image =
-    props.image ?? "https://dummyimage.com/144x94.png?text=Game%20Image";
+  const image = props.image ?? "/thumbnails/dummy.png";
 
   return (
     <div
@@ -252,16 +272,21 @@ function Game(props: {
         height={94}
       />
       <div className="pl-5 pr-2 py-2 w-full flex flex-col items-center md:items-start">
-        <a className="flex flex-row items-center" href={props.href}>
+        {props.href && (
+          <a className="flex flex-row items-center" href={props.href}>
+            <h3 className="text-xl font-semibold inline">{props.title}</h3>
+            <Image
+              className="object-contain w-6 h-6 inline pl-2 dark:invert"
+              src="/icons/newtab.png"
+              alt="New Tab Icon"
+              width={24}
+              height={24}
+            />
+          </a>
+        )}
+        {!props.href && (
           <h3 className="text-xl font-semibold inline">{props.title}</h3>
-          <Image
-            className="object-contain w-6 h-6 inline pl-2 dark:invert"
-            src="/icons/newtab.png"
-            alt="New Tab Icon"
-            width={24}
-            height={24}
-          />
-        </a>
+        )}
         <p className="w-72 text-center md:w-full md:text-start">
           {props.description}
         </p>
