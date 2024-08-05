@@ -66,6 +66,8 @@ export default function Main() {
             Projects
           </h2>
           <div className="flex flex-col gap-16">
+            <div id="timetracker" />{" "}
+            {/* For that one google app... remove later */}
             <Project
               title="Temporal"
               description={[
