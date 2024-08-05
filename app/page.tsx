@@ -92,6 +92,11 @@ export default function Main() {
             </Project>
             <Project
               title="Routines App"
+              description={[
+                "A mobile app that helps you keep track of your daily routines and habits.",
+                "Create habits and group them into routines, then track your progress and see your streaks.",
+                "Mark days as partial successes to encourage yourself to make some progress even on bad days.",
+              ].join(" ")}
               image="/thumbnails/routines.png"
               skills={["React Native", "Typescript", "Expo", "Sqlite"]}
               id="routines"
@@ -105,6 +110,12 @@ export default function Main() {
             </Project>
             <Project
               title="YouCaption"
+              description={[
+                "A web-app to replace the now-defunct YouTube community captions feature.",
+                "Create and share captions for videos made by your favorite creators.",
+                "Search for and download subtitle files for videos or creators for whatever language you like.",
+                "Add captions your community makes to your videos to make them more accessible to the hard-of-hearing and foreign language speakers.",
+              ].join(" ")}
               image="/thumbnails/youcaption.png"
               skills={["React", "Typescript", "Python", "PostgreSQL"]}
               id="youcaption"
@@ -124,6 +135,7 @@ export default function Main() {
             </Project>
             <Project
               title="This Portfolio!"
+              description="The website you're on right now! Hardly needs explaining. If you like it, or anything else here, feel free to reach out to me!"
               image="/thumbnails/portfolio.png"
               skills={["React", "Tailwind", "Typescript"]}
               id="portfolio"
