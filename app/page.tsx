@@ -217,7 +217,7 @@ function Project(props: {
         <div className="relative group">
           <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-60% dark:from-50% dark:to-zinc-950 z-10" />
           <div className="absolute w-full h-full group-hover:opacity-100 opacity-0 transition-all p-4 bg-myhoverbg-100 dark:bg-myhoverbg-0">
-            <p className="font-semibold text-black dark:text-white">
+            <p className="font-semibold text-black dark:text-white absolute z-20 pr-4">
               {props.description}
             </p>
           </div>
