@@ -169,7 +169,7 @@ export default function Main() {
           <h2 id="coursework" className="pt-32 pb-8">
             Misc Coursework
           </h2>
-          <div className="flex flex-col items-center gap-12 pb-24">
+          <div className="flex flex-col items-center gap-12 pb-60">
             <MiniProject
               title="ML-based Connect-4 Opponent AI"
               href="https://github.com/Gaurang-1402/Machine-Learning-final-project"
