@@ -86,6 +86,21 @@ export default function Main() {
               id="timetracker"
             >
               <ProjectLink
+                alert="Pending review and testing as per recent changes to Play Store policy"
+                logo="/icons/playstore.png"
+                name="Playstore"
+              />
+              <ProjectLink
+                alert="Pending review and testing as per recent changes to Play Store policy"
+                logo="/icons/android.png"
+                name="APK"
+              />
+              <ProjectLink
+                alert="Pending review and testing as per recent changes to Play Store policy"
+                logo="/icons/youtube.png"
+                name="Demo"
+              />
+              <ProjectLink
                 href="https://github.com/Remiwi/TimeTracker"
                 logo="/icons/github.png"
                 name="Repo"
