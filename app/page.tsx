@@ -224,7 +224,7 @@ function Project(props: {
 
   return (
     <div
-      className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform"
+      className="rounded-3xl overflow-hidden shadow-lg shadow-zinc-400 dark:shadow-2xl dark:shadow-zinc-950 transition-transform scroll-mt-16"
       id={props.id}
     >
       <div className="w-full h-full flex flex-col justify-between bg-white dark:bg-zinc-950">
