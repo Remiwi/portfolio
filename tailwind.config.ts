@@ -64,6 +64,9 @@ const config: Config = {
           100: "#ffffffdd",
         },
       },
+      screens: {
+        xs: "420px",
+      },
     },
   },
   plugins: [],

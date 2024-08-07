@@ -10,6 +10,7 @@ export default function ProjectLink(props: {
   name: string;
   highlighted?: boolean;
   alert?: string;
+  hideWhenSmall?: boolean;
 }) {
   const [modalOpen, setModalOpen] = useState(false);
   const background = props.highlighted
@@ -17,7 +18,7 @@ export default function ProjectLink(props: {
     : "bg-transparent border border-slate-400 dark:border-white";
 
   return (
-    <>
+    <div className={props.hideWhenSmall ? "invisible xs:visible" : ""}>
       {props.alert !== undefined && (
         <MyModal
           title={props.alert}
@@ -46,6 +47,6 @@ export default function ProjectLink(props: {
         />
         <p className="pb-0">{props.name}</p>
       </a>
-    </>
+    </div>
   );
 }

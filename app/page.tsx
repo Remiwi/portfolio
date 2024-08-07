@@ -89,6 +89,7 @@ export default function Main() {
                 alert="Pending review from Google Play Store"
                 logo="/icons/playstore.png"
                 name="Playstore"
+                hideWhenSmall={true}
               />
               {/* <ProjectLink
                 alert="Pending review and testing as per recent changes to Play Store policy"
