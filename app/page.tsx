@@ -86,24 +86,24 @@ export default function Main() {
               id="temporal"
             >
               <ProjectLink
-                alert="Pending review and testing as per recent changes to Play Store policy"
+                alert="Pending review from Google Play Store"
                 logo="/icons/playstore.png"
                 name="Playstore"
               />
-              <ProjectLink
+              {/* <ProjectLink
                 alert="Pending review and testing as per recent changes to Play Store policy"
                 logo="/icons/android.png"
                 name="APK"
-              />
-              <ProjectLink
-                alert="Pending review and testing as per recent changes to Play Store policy"
-                logo="/icons/youtube.png"
-                name="Demo"
-              />
+              /> */}
               <ProjectLink
                 href="https://github.com/Remiwi/TimeTracker"
                 logo="/icons/github.png"
                 name="Repo"
+              />
+              <ProjectLink
+                href="https://www.youtube.com/watch?v=-bqt96mCDNk"
+                logo="/icons/youtube.png"
+                name="Demo"
                 highlighted={true}
               />
             </Project>
