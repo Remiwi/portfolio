@@ -131,8 +131,8 @@ export default function Main() {
               description={[
                 "A web-app to replace the now-defunct YouTube community captions feature.",
                 "Create and share captions for videos made by your favorite creators.",
-                "Search for and download subtitle files for videos or creators for whatever language you like.",
-                "Add captions your community makes to your videos to make them more accessible to the hard-of-hearing and foreign language speakers.",
+                "Search for and download subtitle files for videos or creators and in any language.",
+                "Add captions your community makes to your videos to expand your audience!",
               ].join(" ")}
               image="/thumbnails/youcaption.png"
               skills={["React", "Typescript", "Python", "PostgreSQL"]}
