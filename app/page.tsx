@@ -72,8 +72,8 @@ export default function Main() {
               title="Temporal"
               description={[
                 "A time-tracking app that helps you keep track of your daily activities and how much time you spend on them.",
-                "Run timers with associated projects, descriptions, and tags. Later, use entries made to review how you spent your time.",
-                "Comes with many feautures designed to make interactions faster and easier, as well as automatic backups and cloud sync.",
+                "Run timers with projects, descriptions, and tags. Later, use entries to review how you spent your time.",
+                "Supports syncing entries across devices via Toggl. Checkout the demo video!",
               ].join(" ")}
               image="/thumbnails/timetracker.png"
               skills={[
